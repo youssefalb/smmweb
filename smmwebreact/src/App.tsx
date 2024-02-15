@@ -1,11 +1,15 @@
 import React from 'react';
 import './App.css';
-
+import NavBar from './components/Navbar';
+import Hero from './components/Hero'
+import CooperationPlan from './components/CooperationPlan'
 function App() {
   return (
-    <h1 className="text-3xl font-bold text-red-600">
-      Simple React Typescript Tailwind Sample, Nice it works!
-    </h1>
+    <div>
+      <NavBar />
+      <Hero />
+      <CooperationPlan />
+    </div>
   );
 }
 
