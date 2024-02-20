@@ -2,8 +2,8 @@ import React from 'react';
 
 const ContactForm = () => {
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100">
-            <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm">
+        <div className="flex items-center justify-center min-h-screen bg-white-100">
+            <div className=" bg-gray-100 p-8 rounded-2xl shadow-lg w-full max-w-sm">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact Us</h2>
                 <p className="text-gray-600 mb-8">Get free consultation for you.</p>
                 <form>

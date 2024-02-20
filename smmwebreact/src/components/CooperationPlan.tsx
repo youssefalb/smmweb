@@ -4,8 +4,9 @@ const CooperationPlan = () => {
     return (
         <div className=" bg-gray-100 py-10">
             <div className="text-center">
+                <p className="uppercase text-sm text-gray-500 mb-10">PRZEPŁYW PRACY</p>
+
                 <h2 className="text-4xl font-semibold mb-6">Plan Współpracy</h2>
-                <p className="uppercase text-sm text-gray-500 mb-10">Przebieg pracy</p>
             </div>
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div className="flex flex-col items-center text-center">
