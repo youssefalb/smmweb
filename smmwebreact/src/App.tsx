@@ -10,11 +10,14 @@ import ConsultationSection from './components/ConsultationSection';
 import ContactForm from './components/ContactForm';
 import TeamSection from './components/TeamSection';
 import Footer from './components/Footer';
+import Pricing from './components/Pricing'
+
 function App() {
   return (
     <div>
       <NavBar />
       <Hero />
+      <Pricing/>
       <Services />
       <CooperationPlan />
       <FaqSection />
