@@ -9,6 +9,7 @@ import Services from './components/Services';
 import ConsultationSection from './components/ConsultationSection';
 import ContactForm from './components/ContactForm';
 import TeamSection from './components/TeamSection';
+import Footer from './components/Footer';
 function App() {
   return (
     <div>
@@ -20,6 +21,7 @@ function App() {
       <ConsultationSection />
       <TeamSection />
       <ContactForm />
+      <Footer />
     </div>
   );
 }
