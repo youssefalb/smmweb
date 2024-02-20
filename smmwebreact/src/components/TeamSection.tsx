@@ -12,7 +12,7 @@ const TeamSection = () => {
 
             <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 min-h-[400px]">
                 {/* Text Description */}
-                <div className="bg-yellow-200 p-6 rounded-3xl shadow-md max-w-md min-h-[360px]">
+                <div className=" bg-yellow p-6 rounded-3xl shadow-md max-w-md min-h-[360px]">
                     <h3 className="text-xl font-bold mb-3">Cześć!</h3>
                     {/* To change */}
                     <p className="text-gray-700">

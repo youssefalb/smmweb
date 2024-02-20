@@ -8,6 +8,7 @@ import FaqSection from './components/FaqSection'
 import Services from './components/Services';
 import ConsultationSection from './components/ConsultationSection';
 import ContactForm from './components/ContactForm';
+import TeamSection from './components/TeamSection';
 function App() {
   return (
     <div>
@@ -15,8 +16,9 @@ function App() {
       <Hero />
       <Services />
       <CooperationPlan />
-      {/* For testing*/}
-      {/* <ConsultationSection /> */}
+      <FaqSection />
+      <ConsultationSection />
+      <TeamSection />
       <ContactForm />
     </div>
   );

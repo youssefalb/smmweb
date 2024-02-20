@@ -3,7 +3,7 @@ import React from 'react';
 const ConsultationSection = () => {
     return (
         <div className="flex min-h-screen items-center justify-center bg-white">
-            <div className="container flex items-center max-w-7xl mx-14 bg-purple-600 w-full rounded-3xl overflow-hidden">
+            <div className="flex items-center max-w-7xl bg-purple w-3/5 rounded-3xl overflow-hidden">
 
                 {/* Left side - Image */}
                 <div className="w-3/10">

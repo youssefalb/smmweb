@@ -8,7 +8,10 @@ module.exports = {
         'purple': '#766DF1',
         'black': '#222222', 
       },
-
+       width: {
+        '3/10': '30%',
+        '7/10': '70%',
+      },
       // Now all text elements use this font
       fontFamily: {
         sans: ['"Space Grotesk"', 'sans-serif'],
