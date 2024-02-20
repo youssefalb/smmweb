@@ -4,7 +4,7 @@ const CooperationPlan = () => {
     return (
         <div className=" bg-gray-100 py-10">
             <div className="text-center">
-            <p className="uppercase text-sm text-gray-500 mb-2">PRZebieg pracy</p>
+                <p className="uppercase text-sm text-gray-500 mb-2">PRZebieg pracy</p>
                 <h2 className="text-4xl font-bold mb-24">Plan Współpracy</h2>
             </div>
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
