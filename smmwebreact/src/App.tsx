@@ -11,12 +11,14 @@ import ContactForm from './components/ContactForm';
 import TeamSection from './components/TeamSection';
 import Footer from './components/Footer';
 import Pricing from './components/Pricing'
+import Motto from './components/Motto'
 
 function App() {
   return (
     <div>
       <NavBar />
       <Hero />
+      <Motto/>
       <Pricing/>
       <Services />
       <CooperationPlan />
