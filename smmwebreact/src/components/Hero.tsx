@@ -28,7 +28,7 @@ function PricingSection() {
     return (
         <div className="bg-white py-14">
             <div className="max-w-6xl mx-auto">
-                <p className="text-lg text-center md:text-left">Strona-wizytówka już od</p>
+                <p className="text-lg text-center md:text-left">Strona WWW już od</p>
                 
                 <div className="flex flex-col md:flex-row justify-center md:justify-start items-center md:space-x-10 mt-2">
 
@@ -38,8 +38,8 @@ function PricingSection() {
                     </div>
 
                     <div className="text-center md:text-left mt-4 md:mt-0">
-                        <p className="text-5xl font-bold">4 dni</p>
-                        <p className="text-base font-light">Dla pilnych zamówień</p>
+                        <p className="text-5xl font-bold">14+</p>
+                        <p className="text-base font-light">Branżom pomagamy</p>
                     </div>
                 </div>
             </div>

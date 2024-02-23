@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import backgroundImage from '../assets/images/faq.svg';  // Update the path to your actual image
+import SectionContainer from './templates/SectionContainer';
 
 // Define a type for the FAQ data to ensure type safety
 interface FAQItem {
@@ -22,11 +23,10 @@ const FaqSection: React.FC = () => {
 
     return (
         <section id="faq">
-            <div className="bg-gray-100 ">
-                <div className="text-center">
-                    <p className="uppercase text-sm text-gray-500 mb-2">faq</p>
-                    <h2 className="text-4xl font-bold mb-20">Często Zadawane Pytania</h2>
-                </div>
+            <SectionContainer
+                title="Często Zadawane Pytania"
+                subtitle="faq"
+            >
                 <div className="max-w-6xl mx-auto relative flex flex-wrap">
                     {/* FAQ cards section, taking 2/3 of the width but offset to the left */}
                     <div className="w-full lg:w-2/3 lg:-mr-1/3 p-8 z-10">
@@ -54,7 +54,7 @@ const FaqSection: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </SectionContainer>
         </section>
     );
 };
