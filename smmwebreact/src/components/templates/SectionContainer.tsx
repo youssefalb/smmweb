@@ -29,7 +29,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
                 )}
                 <h2 className={`text-4xl font-bold mb-20 ${textColor}`}>{title}</h2>
             </div>
-            <div className={`${textColor}`}>
+            <div className={`max-w-6xl mx-auto ${textColor}`}>
                 {children} {/* Custom section content */}
             </div>
         </div>

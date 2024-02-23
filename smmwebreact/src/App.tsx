@@ -12,19 +12,21 @@ import TeamSection from './components/TeamSection';
 import Footer from './components/Footer';
 import Pricing from './components/Pricing'
 import Motto from './components/Motto'
+import FeaturesSection  from './components/FeaturesSection';
 
 function App() {
   return (
     <div>
       <NavBar />
       <Hero />
-      <Motto/>
-      <Pricing/>
       <Services />
       <CooperationPlan />
+      <FeaturesSection/>
       <FaqSection />
       <ConsultationSection />
+      <Pricing/>
       <TeamSection />
+      <Motto/>
       <ContactForm />
       <Footer />
     </div>
