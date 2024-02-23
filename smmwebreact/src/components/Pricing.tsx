@@ -65,68 +65,70 @@ const WebsitePricing: React.FC = () => {
     };
 
     return (
-        <div className="  bg-white rounded-2xl p-9 border border-gray-600">
-            <h3 className="text-2xl font-bold text-gray-800 mb-3">Strona Internetowa</h3>
-            <div className="flex items-baseline space-x-2 font-bold text-gray-800 mb-4">
-                <div className="flex items-end space-x-4">
-                    <div className="text-left">
-                        <span className="text-5xl font-bold">{totalOneTimeFee}</span>
-                        <span className="text-2xl">zł</span>
-                        <div className="text-sm text-gray-500">JEDNORAZOWO</div>
-                    </div>
-                    <span className="text-4xl font-bold mb-4">+</span>
-                    <div className="text-left">
-                        <span className="text-5xl font-bold">{totalMonthlyFee}</span>
-                        <span className="text-2xl">zł</span>
-                        <div className="text-sm text-gray-500">MIESIĘCZNIE</div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="flex flex-row">
-                <div className="flex-grow py-4 space-y-2 mb-6 mt-6">
-                    {services.map((service, index) => (
-                        <div key={index} className="flex justify-between items-center">
-                            {service.type === 'boolean' ? (
-                                <label className="flex items-center">
-                                    <CustomCheckbox
-                                        checked={selectedServices.includes(service)}
-                                        onChange={() => handleServiceChange(service)}
-                                    />
-                                    <span className="ml-3">{service.name}</span>
-                                </label>
-                            ) : (
-                                // This is for numeric type services like 'Ilość sekcji'
-                                <label className="flex items-center">
-                                    <span className="">{service.name}</span>
-                                    <input
-                                        type="range"
-                                        min="1"
-                                        max="10"
-                                        value={numericValues[service.name] || 1}
-                                        onChange={(e) => handleNumericChange(service.name, Number(e.target.value))}
-                                        className="form-range ml-3"
-                                        step="1"
-                                    />
-                                    <span className="ml-3">{numericValues[service.name] || 1}</span>
-                                </label>
-                            )}
+        <section id="pricing">
+            <div className="  bg-white rounded-2xl p-9 border border-gray-600">
+                <h3 className="text-2xl font-bold text-gray-800 mb-3">Strona Internetowa</h3>
+                <div className="flex items-baseline space-x-2 font-bold text-gray-800 mb-4">
+                    <div className="flex items-end space-x-4">
+                        <div className="text-left">
+                            <span className="text-5xl font-bold">{totalOneTimeFee}</span>
+                            <span className="text-2xl">zł</span>
+                            <div className="text-sm text-gray-500">JEDNORAZOWO</div>
                         </div>
-                    ))}
+                        <span className="text-4xl font-bold mb-4">+</span>
+                        <div className="text-left">
+                            <span className="text-5xl font-bold">{totalMonthlyFee}</span>
+                            <span className="text-2xl">zł</span>
+                            <div className="text-sm text-gray-500">MIESIĘCZNIE</div>
+                        </div>
+                    </div>
                 </div>
 
-                <div className="flex-none space-y-2 mb-6 bg-gray-100 p-4 rounded-lg">
-                    <div className="text-sm font-bold mb-2">Cena Usługi</div>
-                    {services.map((service, index) => (
-                        <div key={index} className="flex justify-between">
-                            <span className="text-m">{service.oneTimeFee}zł + {service.monthlyFee}zł/mc</span>
-                        </div>
-                    ))}
+                <div className="flex flex-row">
+                    <div className="flex-grow py-4 space-y-2 mb-6 mt-6">
+                        {services.map((service, index) => (
+                            <div key={index} className="flex justify-between items-center">
+                                {service.type === 'boolean' ? (
+                                    <label className="flex items-center">
+                                        <CustomCheckbox
+                                            checked={selectedServices.includes(service)}
+                                            onChange={() => handleServiceChange(service)}
+                                        />
+                                        <span className="ml-3">{service.name}</span>
+                                    </label>
+                                ) : (
+                                    // This is for numeric type services like 'Ilość sekcji'
+                                    <label className="flex items-center">
+                                        <span className="">{service.name}</span>
+                                        <input
+                                            type="range"
+                                            min="1"
+                                            max="10"
+                                            value={numericValues[service.name] || 1}
+                                            onChange={(e) => handleNumericChange(service.name, Number(e.target.value))}
+                                            className="form-range ml-3"
+                                            step="1"
+                                        />
+                                        <span className="ml-3">{numericValues[service.name] || 1}</span>
+                                    </label>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="flex-none space-y-2 mb-6 bg-gray-100 p-4 rounded-lg">
+                        <div className="text-sm font-bold mb-2">Cena Usługi</div>
+                        {services.map((service, index) => (
+                            <div key={index} className="flex justify-between">
+                                <span className="text-m">{service.oneTimeFee}zł + {service.monthlyFee}zł/mc</span>
+                            </div>
+                        ))}
+                    </div>
+
                 </div>
 
             </div>
-
-        </div>
+        </section>
     );
 };
 
@@ -161,7 +163,7 @@ const AdditionalPricing: React.FC = () => {
                         </div>
                     </div>
                 </div>
-    
+
                 <div className="flex flex-row">
                     <div className="flex-grow py-4 space-y-2 mb-6 mt-6">
                         {services.map((service, index) => (
@@ -176,7 +178,7 @@ const AdditionalPricing: React.FC = () => {
                             </div>
                         ))}
                     </div>
-    
+
                     <div className="flex-none space-y-2 mb-6 bg-gray-800 p-4 rounded-lg">
                         <div className="text-sm text-gray-400 font-bold mb-2">Cena Usługi</div>
                         {services.map((service, index) => (
@@ -189,7 +191,7 @@ const AdditionalPricing: React.FC = () => {
             </div>
         </div>
     );
-    
+
 };
 
 const Pricing: React.FC = () => {

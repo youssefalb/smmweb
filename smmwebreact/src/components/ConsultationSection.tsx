@@ -2,11 +2,17 @@ import React from 'react';
 
 const ConsultationSection = () => {
     return (
-        <div className="flex min-h-screen items-center justify-center bg-white relative">
+        <div className="flex min-h-52 items-center justify-center bg-white relative px-6 py-32">
 
-            <div className="flex items-stretch bg-purple w-4/5 rounded-3xl relative overflow-hidden">
+            <div className="flex items-stretch bg-purple max-w-6xl rounded-3xl relative overflow-hidden">
 
                 <div className="flex-1 self-stretch w-4/10 ">
+                    <img
+                        src="/vector_white.png"
+                        alt="Decorative element"
+                        className="absolute top-0 left-0 z-0 w-1/12" // Example: w-1/12 for 8.33%, adjust as needed
+
+                    />
                     <img
                         src="/bench-accounting.png"
                         alt="Person working on a laptop"
@@ -31,14 +37,11 @@ const ConsultationSection = () => {
                 <img
                     src="/vector_yellow.png"
                     alt="Decorative element"
-                    className="absolute bottom-12 right-16 transform translate-x-1/2 translate-y-1/2 z-10"
+                    className="absolute bottom-12 right-14 transform translate-x-1/2 translate-y-1/2 z-10"
+                    style={{ width: '11%' }}
+
                 />
 
-                <img
-                    src="/vector_white.png"
-                    alt="Decorative element"
-                    className="absolute top-0 left-0 z-0"
-                />
             </div>
 
         </div>
