@@ -52,6 +52,7 @@
 //     );
 // }
 import React, { useState } from 'react';
+import logo from '../assets/images/logo.svg';
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,7 +73,8 @@ export default function Navbar() {
                     className={`text-black text-2xl font-bold nav-link ${activeSection === 'hero' ? 'active' : ''}`}
                     onClick={() => handleNavLinkClick('hero')}
                 >
-                    WeboKraft
+                    
+                    <img src={logo} alt="WeboKraft" style={{ width: '145px', height: 'auto' }} />
                 </a>
 
                 {/* Desktop Menu */}
