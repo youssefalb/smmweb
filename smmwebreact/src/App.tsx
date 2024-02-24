@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import Pricing from './components/Pricing'
 import Motto from './components/Motto'
 import FeaturesSection  from './components/FeaturesSection';
+import BestWorkSection from './components/BestWorkSection';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <FaqSection />
       <ConsultationSection />
       <Pricing/>
+      <BestWorkSection/>
       <TeamSection />
       <Motto/>
       <ContactForm />
