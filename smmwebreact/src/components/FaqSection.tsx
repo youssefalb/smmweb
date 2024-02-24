@@ -10,12 +10,13 @@ interface FAQItem {
 
 // Sample FAQ data
 const faqs: FAQItem[] = [
-    { question: 'Do you offer flexible payment options?', answer: 'Yes, we provide a variety of payment options to suit our customers\' needs and ensure easy payment process.' },
-    { question: 'What services do you offer?', answer: 'We offer a wide range of digital services including digital marketing, web design, SEO, graphic design, content creation, and social media management.' },
-    { question: 'How long does it take to see results?', answer: 'The time to see results can vary depending on several factors including the nature of your project and the specific services engaged. Typically, clients start to see tangible results within a few weeks to a few months.' },
-    { question: 'How can I request a quote for your service?', answer: 'You can request a quote by contacting us through our website, via email, or by phone. We will get back to you with a detailed proposal after understanding your requirements.' },
-    { question: 'How can I request a quote for your service?', answer: 'You can request a quote by contacting us through our website, via email, or by phone. We will get back to you with a detailed proposal after understanding your requirements.' },
-    { question: 'How can I request a quote for your service?', answer: 'You can request a quote by contacting us through our website, via email, or by phone. We will get back to you with a detailed proposal after understanding your requirements.' }
+    { question: 'Czy są jakieś dodatkowe opłaty związane z tworzeniem strony internetowej?', answer: 'Płatność za stworzenie witryny internetowej jest jednorazowa. Otrzymasz od nas szczegółową wycenę przed rozpoczęciem prac, która pozostanie niezmieniona przez cały czas tworzenia projektu. Możesz zdecydować się na dodatkowe usługi, które są płatne, ale nie są obowiązkowe.' },
+    { question: 'Czy moja nowa strona internetowa będzie zoptymalizowana pod kątem pozycjonowania?', answer: 'Tak, tworzymy nowoczesne witryny internetowe zgodne z aktualnymi wytycznymi Google. Dzięki temu strony są przygotowane do skutecznego pozycjonowania w wynikach wyszukiwania.' },
+    { question: 'Jak długo trwa proces tworzenia strony internetowej?', answer: 'Standardowe strony internetowe tworzymy w ciągu 48 godzin od otrzymania wszystkich niezbędnych informacji. Dla bardziej zaawansowanych projektów czas realizacji może być dłuższy.' },
+    { question: 'Czy mogę wprowadzać zmiany w trakcie tworzenia strony?', answer: 'Tak, w procesie projektowania przewidziane są trzy rundy korekt. Możesz przedstawić nam swoje sugestie w każdym momencie tworzenia strony.' },
+    { question: 'Czy po zakończeniu projektu strona internetowa będzie moją własnością?', answer: 'Tak, po zakończeniu projektu otrzymasz pełne prawa do strony wraz z wszystkimi niezbędnymi dostępami do jej zarządzania i kopią zapasową.' },
+    { question: 'Czy strona będzie odpowiednio wyświetlać się na urządzeniach mobilnych?', answer: 'Tak, wszystkie nasze strony są responsywne, co oznacza, że będą się one poprawnie wyświetlać na różnych urządzeniach, w tym na tabletach, komputerach i smartfonach.' },
+    { question: 'Czy otrzymam materiały edukacyjne, jak zarządzać moją stroną internetową oraz inne przydatne materiały dotyczące poprawy obecności mojego biznesu w internecie?', answer: 'Tak, po zakończeniu projektu strony WWW dostarczymy Ci materiały edukacyjne dotyczące zarządzania Twoją stroną oraz poradnik, jak poprawić widoczność Twojego biznesu w internecie.' }
 ];
 
 const FaqSection: React.FC = () => {

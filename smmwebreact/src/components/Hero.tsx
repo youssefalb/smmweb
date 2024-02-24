@@ -3,8 +3,8 @@ import heroImage from '../assets/images/hero.png'; // Ensure this path matches y
 
 export default function HeroSection() {
     return (
-        <section className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-center">
+        <section className=" bg-white pt-16 pb-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl h-[80vh] mx-auto flex flex-col lg:flex-row justify-between items-center">
                 <div className="lg:flex-1">
                 <h1 className="text-7xl font-bold text-gray-900 mb-6">Twoja Firma w <span className="text-purple">Internecie!</span></h1>
                     <p className="text-lg text-black mb-4">
