@@ -12,7 +12,7 @@ import TeamSection from './components/TeamSection';
 import Footer from './components/Footer';
 import Pricing from './components/Pricing'
 import Motto from './components/Motto'
-import FeaturesSection  from './components/FeaturesSection';
+import FeaturesSection from './components/FeaturesSection';
 import BestWorkSection from './components/BestWorkSection';
 
 function App() {
@@ -22,13 +22,13 @@ function App() {
       <Hero />
       <Services />
       <CooperationPlan />
-      <FeaturesSection/>
+      <FeaturesSection />
       <FaqSection />
       <ConsultationSection />
       {/* <Pricing/> */}
-      <BestWorkSection/>
+      <BestWorkSection />
       <TeamSection />
-      <Motto/>
+      <Motto />
       <ContactForm />
       <Footer />
     </div>

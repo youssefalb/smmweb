@@ -70,10 +70,10 @@ export default function Navbar() {
                 {/* Logo section */}
                 <a
                     href="#hero"
-                    className={`text-black text-2xl font-bold nav-link ${activeSection === 'hero' ? 'active' : ''}`}
+                    className={`text-black text-2xl font-bold`}
                     onClick={() => handleNavLinkClick('hero')}
                 >
-                    
+
                     <img src={logo} alt="WeboKraft" style={{ width: '145px', height: 'auto' }} />
                 </a>
 
