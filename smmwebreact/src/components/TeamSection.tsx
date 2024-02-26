@@ -26,13 +26,13 @@ const TeamSection = () => {
                             name="Andrii"
                             surname=" Bobchuk"
                             titles={["Web Developer", "SMM Specialist"]}
-                            profileImg="/path-to-andrii-image.png"
+                            cardImg="/andrii_card.png"
                         />
                         <ProfileCard
                             name="Youssef"
                             surname="Al bali"
                             titles={["Web Developer", "SEO Specialist"]}
-                            profileImg="/path-to-youssef-image.png"
+                            cardImg="/youssef_card.png"
                         />
                     </div>
                 </div>
