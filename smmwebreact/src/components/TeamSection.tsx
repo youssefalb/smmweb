@@ -1,42 +1,42 @@
 import React from 'react';
 import ProfileCard from './ProfileCard';
+import SectionContainer from './templates/SectionContainer';
 
 const TeamSection = () => {
     return (
         <section id="aboutus">
-            <div className="bg-gray-100 p-10">
-                <div className="text-center">
-                    <p className="uppercase text-sm text-gray-500 mb-10">ZESPÓL</p>
-
-                    <h2 className="text-4xl font-semibold mb-6">Zespól TopStrony</h2>
-                </div>
-
-                <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 min-h-[400px]">
-                    {/* Text Description */}
-                    <div className=" bg-yellow p-6 rounded-3xl shadow-md max-w-md min-h-[360px]">
-                        <h3 className="text-xl font-bold mb-3">Cześć!</h3>
-                        {/* To change */}
-                        <p className="text-gray-700">
-                            Jako założyciele, ja, Andrii, specjalizuję się w rozwiązaniach technologicznych, natomiast Youssef w strategiach biznesowych. Nasza firma oferuje wysokiej jakości usługi w zakresie projektowania stron internetowych, SEO oraz zarządzania mediami społecznościowymi, gwarantując naszym klientom przewagę konkurencyjną na rynku.
-                        </p>
+            <SectionContainer
+                title='Zespół WeboKraft'
+                subtitle='ZESPÓŁ'
+            >
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+                    <div className="bg-purple p-8 rounded-2xl shadow-md max-w-md min-h-[360px] flex flex-col justify-between"> {/* Adjusted for button spacing */}
+                        <div> {/* Content container */}
+                            <h3 className="text-3xl text-white font-bold mb-3">Cześć! 👋</h3>
+                            <p className="text-gray-300">
+                                Nasz zespół składa się z profesjonalistów w dziedzinie rozwoju stron internetowych.
+                                <br></br>
+                                <span className='font-bold text-white'>Andrii,</span> specjalista od SMM, i <span className='font-bold text-white'>Youssef, </span> ekspert SEO, wspólnie podnoszą obecność każdej firmy w internecie. 🌐💪
+                            </p>
+                        </div>
+                        <button className="mt-4 border-2 border-white text-white py-2 px-4 rounded-lg hover:bg-white hover:text-purple transition duration-300 font-bold">Kontakt</button> {/* New Button */}
                     </div>
 
-                    <div className="flex justify-center items-center space-x-4">
-                        <ProfileCard
-                            name="Andrii"
-                            surname=" Bobchuk"
-                            titles={["Web Developer", "SMM Specialist"]}
-                            cardImg="/andrii_card.png"
-                        />
-                        <ProfileCard
-                            name="Youssef"
-                            surname="Al bali"
-                            titles={["Web Developer", "SEO Specialist"]}
-                            cardImg="/youssef_card.png"
-                        />
-                    </div>
+                    <ProfileCard
+                        name="Andrii"
+                        surname=" Bobchuk"
+                        titles={["Web Developer, SMM Specialist"]}
+                        cardImg="/IMG_1757.jpg"
+                    />
+                    <ProfileCard
+                        name="Youssef"
+                        surname="Al bali"
+                        titles={["Web Developer, SEO Specialist"]}
+                        cardImg="/youssef_card.png"
+                    />
                 </div>
-            </div>
+            </SectionContainer>
+
         </section>
     );
 };
