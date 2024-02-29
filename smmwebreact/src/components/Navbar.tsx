@@ -1,10 +1,30 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import logo from '../assets/images/logo.svg';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Navbar() {
+    const logoRef = useRef(null);
+    const navLinksRef = useRef<(HTMLAnchorElement | null)[]>([]);
+    navLinksRef.current = [];
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('');
+
+    const sections = [
+        { id: 'home', name: 'Home' },
+        { id: 'services', name: 'Usługi' },
+        { id: 'process', name: 'Proces' },
+        { id: 'portfolio', name: 'Portfolio' },
+        { id: 'faq', name: 'FAQ' },
+        { id: 'pricing', name: 'Cennik' },
+        { id: 'aboutus', name: 'O Nas' },
+        { id: 'contact', name: 'Kontakt' }
+    ];
     const handleScroll = () => {
         const sections = ['home', 'services', 'process', 'portfolio', 'faq', 'pricing', 'aboutus', 'contact'];
 
@@ -28,6 +48,29 @@ export default function Navbar() {
         };
     }, []);
 
+
+    useEffect(() => {
+        // Set initial states for animation if needed
+        gsap.set(logoRef.current, { opacity: 0, x: -50 });
+        gsap.set(navLinksRef.current, { opacity: 0, x: -50 });
+
+        // Animate to fully visible state
+        gsap.to(logoRef.current, { duration: 1, opacity: 1, x: 0, ease: 'power1.out' });
+        gsap.to(navLinksRef.current, { duration: 0.5, opacity: 1, x: 0, stagger: 0.1, ease: 'power1.out' });
+
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+    }, []);
+
+
+    const addToNavLinksRef = (el: any) => {
+        if (el && !navLinksRef.current.includes(el)) {
+            navLinksRef.current.push(el);
+        }
+    };
+
     const handleNavLinkClick = (section: any) => {
         setActiveSection(section);
         setIsMenuOpen(false);
@@ -43,53 +86,29 @@ export default function Navbar() {
                     onClick={() => handleNavLinkClick('hero')}
                 >
 
-                    <img src={logo} alt="WeboKraft" style={{ width: '145px', height: 'auto' }} />
+                    <img src={logo} alt="WeboKraft" ref={logoRef} style={{ width: '145px', height: 'auto' }} />
                 </a>
 
                 {/* Desktop Menu */}
                 <nav className="hidden md:flex justify-center flex-1 space-x-8">
-                    <a
-                        href="#services"
-                        className={`text-gray-600 hover:text-gray-900 nav-link ${activeSection === 'services' ? 'active' : ''}`}
-                        onClick={() => handleNavLinkClick('services')}
-                    >
-                        Usługi
-                    </a>
-                    <a
-                        href="#process"
-                        className={`text-gray-600 hover:text-gray-900 nav-link ${activeSection === 'process' ? 'active' : ''}`}
-                        onClick={() => handleNavLinkClick('process')}
-                    >
-                        Proces
-                    </a>
-                    <a
-                        href="#portfolio"
-                        className={`text-gray-600 hover:text-gray-900 nav-link ${activeSection === 'portfolio' ? 'active' : ''}`}
-                        onClick={() => handleNavLinkClick('portfolio')}
-                    >
-                        Portfolio
-                    </a>
-                    <a
-                        href="#faq"
-                        className={`text-gray-600 hover:text-gray-900 nav-link ${activeSection === 'faq' ? 'active' : ''}`}
-                        onClick={() => handleNavLinkClick('faq')}
-                    >
-                        FAQ
-                    </a>
-                    <a
-                        href="#pricing"
-                        className={`text-gray-600 hover:text-gray-900 nav-link ${activeSection === 'pricing' ? 'active' : ''}`}
-                        onClick={() => handleNavLinkClick('pricing')}
-                    >
-                        Cennik
-                    </a>
-                    <a
-                        href="#aboutus"
-                        className={`text-gray-600 hover:text-gray-900 nav-link ${activeSection === 'aboutus' ? 'active' : ''}`}
-                        onClick={() => handleNavLinkClick('aboutus')}
-                    >
-                        O Nas
-                    </a>
+                    {[
+                        { id: 'services', name: 'Usługi' },
+                        { id: 'process', name: 'Proces' },
+                        { id: 'portfolio', name: 'Portfolio' },
+                        { id: 'faq', name: 'FAQ' },
+                        { id: 'pricing', name: 'Cennik' },
+                        { id: 'aboutus', name: 'O Nas' }
+                    ].map((section, index) => (
+                        <a
+                            key={section.id}
+                            href={`#${section.id}`}
+                            className={`text-gray-600 hover:text-gray-900 nav-link ${activeSection === section.id ? 'active' : ''}`}
+                            onClick={() => handleNavLinkClick(section.id)}
+                            ref={addToNavLinksRef} // Use the ref adding function here
+                        >
+                            {section.name}
+                        </a>
+                    ))}
                 </nav>
 
                 {/* CTA button */}
@@ -97,6 +116,7 @@ export default function Navbar() {
                     href="#contact"
                     className="hidden md:block text-white bg-black px-4 py-2 rounded-md"
                     onClick={() => handleNavLinkClick('contact')}
+                    ref={addToNavLinksRef} // Use the ref adding function here
                 >
                     Bezpłatna Konsultacja
                 </a>

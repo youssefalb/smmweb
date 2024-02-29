@@ -63,6 +63,8 @@ html {
 .nav-link.active::before {
     background-color: #000; 
     border-color: #000; 
+    font-weight: bold;
+
 }
 
 
