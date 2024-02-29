@@ -64,7 +64,11 @@ html {
     background-color: #000; 
     border-color: #000; 
     font-weight: bold;
+}
 
+.nav-link.active {
+    color: #766DF1; 
+    font-weight: bold; /* Optional: Makes the active nav-link text bold */
 }
 
 

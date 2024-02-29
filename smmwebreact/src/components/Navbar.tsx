@@ -74,6 +74,7 @@ export default function Navbar() {
     const handleNavLinkClick = (section: any) => {
         setActiveSection(section);
         setIsMenuOpen(false);
+
     };
 
     return (
