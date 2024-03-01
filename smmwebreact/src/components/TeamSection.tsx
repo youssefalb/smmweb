@@ -19,7 +19,7 @@ const TeamSection = () => {
                                 <span className='font-bold text-white'>Andrii,</span> specjalista od SMM, i <span className='font-bold text-white'>Youssef, </span> ekspert SEO, wspólnie podnoszą obecność każdej firmy w internecie. 🌐💪
                             </p>
                         </div>
-                        <button className="mt-4 border-2 border-white text-white py-2 px-4 rounded-lg hover:bg-white hover:text-purple transition duration-300 font-bold">Kontakt</button> {/* New Button */}
+                        <a href="#contact" className="mt-4 border-2 text-center border-white text-white py-2 px-4 rounded-lg hover:bg-white hover:text-purple transition duration-300 font-bold">Kontakt</a> {/* New Button */}
                     </div>
 
                     <ProfileCard

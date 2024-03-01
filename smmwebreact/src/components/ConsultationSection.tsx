@@ -25,19 +25,19 @@ const ConsultationSection = () => {
                     <h2 className="text-4xl font-bold text-white">
                         Masz jeszcze jakiekolwiek pytania?
                     </h2>
-                    <p className="my-4 text-lg text-white">
+                    <p className="mt-4 text-lg text-white mb-8">
                         Umówmy się na krótką, bezpłatną rozmowę, podczas której odpowiemy na Twoje pytania!
                     </p>
-                    <button className="bg-black text-white font-bold py-2 px-4 rounded hover:bg-purple-800 transition-colors my-4">
+                    <a href="#contact" className="bg-black text-white font-bold py-3 px-4 hover:bg-purple-800 transition-colors my-4 rounded-lg">
                         Uzyskaj bezpłatną konsultację
-                    </button>
+                    </a>
                 </div>
 
                 {/* Yellow decorative element, set a lower z-index to ensure it does not overlap the content */}
                 <img
                     src="/vector_yellow.png"
                     alt="Decorative element"
-                    className="absolute bottom-12 right-14 transform translate-x-1/2 translate-y-1/2 z-10"
+                    className="absolute bottom-8 right-8 translate-x-1/2 translate-y-1/2 z-10"
                     style={{ width: '11%' }}
 
                 />
