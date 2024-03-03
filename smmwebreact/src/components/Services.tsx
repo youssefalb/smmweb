@@ -44,37 +44,53 @@ const Services: React.FC = () => {
     const leftCardRef = useRef<HTMLDivElement>(null);
     const rightCardRef = useRef<HTMLDivElement>(null);
     const middleCardRef = useRef<HTMLDivElement>(null);
+    const subtitleRef = useRef<HTMLParagraphElement>(null);
+    const titleRef = useRef<HTMLHeadingElement>(null);
 
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
         const elements = [leftCardRef.current, middleCardRef.current, rightCardRef.current];
         elements.forEach((el, index) => {
-            if (!el) return;
-
-            gsap.fromTo(el,
-                {
-                    autoAlpha: 0,
-                    x: index === 0 ? -200 : index === 2 ? 200 : 0, // Adjusted for the middle card
+            gsap.fromTo(el, { autoAlpha: 0, x: index === 0 ? -200 : index === 2 ? 200 : 0 }, {
+                duration: 1,
+                autoAlpha: 1,
+                x: 0,
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top center+=100",
+                    toggleActions: "play pause play reverse",
                 },
-                {
-                    duration: 1,
-                    autoAlpha: 1,
-                    x: 0, // Ensures the middle card stays in its original place
-                    scrollTrigger: {
-                        trigger: el,
-                        start: "top center+=100",
-                        toggleActions: "play none none reverse",
-                    }
-                }
-            );
+            });
         });
-    }, []);
+
+        // Animation for the subtitle coming from the right
+        ScrollTrigger.create({
+            trigger: subtitleRef.current,
+            start: "top 90%", // Adjust as needed
+            onEnter: () => gsap.fromTo(subtitleRef.current, { autoAlpha: 0, x: 500 }, { duration: 1, autoAlpha: 1, x: 0 }),
+            onLeave: () => gsap.to(subtitleRef.current, { autoAlpha: 0, x: 500, duration: 1 }),
+            onEnterBack: () => gsap.to(subtitleRef.current, { autoAlpha: 1, x: 0, duration: 1 }),
+            onLeaveBack: () => gsap.to(subtitleRef.current, { autoAlpha: 0, x: -500, duration: 1 }),
+        });
+
+        // Animation for the title coming from the left
+        ScrollTrigger.create({
+            trigger: titleRef.current,
+            start: "top 90%", // Adjust as needed
+            onEnter: () => gsap.fromTo(titleRef.current, { autoAlpha: 0, x: -500 }, { duration: 1, autoAlpha: 1, x: 0 }),
+            onLeave: () => gsap.to(titleRef.current, { autoAlpha: 0, x: -500, duration: 1 }),
+            onEnterBack: () => gsap.to(titleRef.current, { autoAlpha: 1, x: 0, duration: 1 }),
+            onLeaveBack: () => gsap.to(titleRef.current, { autoAlpha: 0, x: 500, duration: 1 }),
+        });
+    }, [t]);
 
     return (
         <section id="services">
             <div className="bg-white py-20 mb-20">
                 <div className="text-center">
-                    <p className="uppercase text-sm text-gray-500 mb-2">{t('services.subtitle')}</p>
-                    <h2 className="text-4xl font-bold mb-20">{t('services.title')}</h2>
+                    <p ref={subtitleRef} className="background-text__item uppercase text-sm text-gray-500 mb-2">{t('services.subtitle')}</p>
+                    <h2 ref={titleRef} className="text-4xl font-bold mb-20">{t('services.title')}</h2>
                 </div>
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <ServiceCard
