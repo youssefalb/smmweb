@@ -1,10 +1,192 @@
 {
+    "navbar": {
+        "services": "Usługi",
+        "process": "Proces",
+        "portfolio": "Portfolio",
+        "faq": "FAQ",
+        "pricing": "Cennik",
+        "about": "O Nas",
+        "freeConsultation": "Bezpłatna Konsultacja"
+    },
     "hero": {
-      "title": "Witaj na naszej stronie",
-      "subtitle": "Oto podtytuł"
+        "titlePartOne": "Twoja Firma w",
+        "titlePartTwo": "Internecie!",
+        "description": "Umożliwiamy firmom korzystanie z innowacyjnych rozwiązań cyfrowych, które tworzą trwałe wrażenia. Podnieś swoją markę razem z nami!",
+        "contactButton": "Skontaktuj Się z Nami",
+        "servicesButton": "Usługi",
+        "websiteOffer": "Strona WWW już od",
+        "price": "990zł",
+        "codeNote": "z kodem #webokraft",
+        "helpNote": "Branżom pomagamy"
+    },
+    "services": {
+        "subtitle": "NASZE USŁUGI",
+        "title": "Co Oferujemy?",
+        "socialMediaManagement": {
+            "title": "Zarządzanie Mediami Społecznościowymi",
+            "description": "Tworzenie i zarządzanie kontami, projektowanie postów, edycja wideo, reklama."
+        },
+        "webDesign": {
+            "title": "Projektowanie Stron Internetowych",
+            "description": "Tworzenie strony internetowej z zachwycającą grafiką i doświadczeniem użytkownika."
+        },
+        "seoOptimization": {
+            "title": "SEO Optymalizacja",
+            "description": "Zwiększ widoczność i przyciągnij organiczny ruch dzięki naszym technikom SEO."
+        }
+    },
+    "cooperationPlan": {
+        "subtitle": "PRZEBIEG PRACY",
+        "title": "Plan Współpracy",
+        "steps": {
+            "interview": {
+                "title": "Wywiad",
+                "description": "Przeprowadzamy wywiad, aby dobrze poznać Twoje potrzeby oraz ustalić priorytety."
+            },
+            "design": {
+                "title": "Projekt",
+                "description": "Na podstawie zebranych wymagań tworzymy projekt graficzny Twojej strony internetowej."
+            },
+            "implementation": {
+                "title": "Wykonanie",
+                "description": "Nasi webmasterzy łączą grafikę i treści w całość oraz dbają, by strona wyświetlała się dobrze na każdym urządzeniu."
+            },
+            "acceptance": {
+                "title": "Akceptacja i Wdrożenie",
+                "description": "Jeszcze przed publikacją strony w sieci przekazujemy Ci ostateczny projekt do wglądu i akceptacji."
+            }
+        }
+    },
+    "package": {
+        "subtitle": "STANDARDOWA STRONA",
+        "title": "Co w Zestawie?",
+        "graphicDesign": {
+            "title": "Projekt Graficzny",
+            "description": "Profesjonalny projekt graficzny strony dostosowany do indywidualnych potrzeb klienta"
+        },
+        "mobileVersion": {
+            "title": "Mobilna Wersja",
+            "description": "Dostosowujemy stronę do urządzeń mobilnych, zapewniając płynne doświadczenie użytkownika."
+        },
+        "privacy": {
+            "title": "Prywatność",
+            "description": "Zapewniamy, że strona jest zgodna z aktualnymi przepisami dotyczącymi prywatności i ochrony danych"
+        },
+        "fastLoading": {
+            "title": "Szybkie Ładowanie",
+            "description": "Optymalizujemy prędkość ładowania strony, co przekłada się na lepsze rankingi w wyszukiwarkach i satysfakcję użytkowników"
+        },
+        "seoOptimization": {
+            "title": "Optymalizacja Pozycjonowania",
+            "description": "Zwiększ widoczność strony w wynikach wyszukiwania dzięki zaawansowanym strategiom SEO."
+        },
+        "trainingAndConsulting": {
+            "title": "Szkolenie & Doradztwo",
+            "description": "Oferujemy profesjonalne szkolenia, aby pomóc Ci lepiej zarządzać stroną internetową i strategiami cyfrowymi."
+        }
+    },
+    "faq": {
+        "subtitle": "FAQ",
+        "title": "Często Zadawane Pytania",
+        "description": "Odpowiedzi na Twoje Pytania",
+        "questions": {
+            "additionalFees": {
+                "question": "Czy są jakieś dodatkowe opłaty związane z tworzeniem strony internetowej?",
+                "answer": "Płatność za stworzenie witryny internetowej jest jednorazowa. Otrzymasz od nas szczegółową wycenę przed rozpoczęciem prac, która pozostanie niezmieniona przez cały czas tworzenia projektu. Możesz zdecydować się na dodatkowe usługi, które są płatne, ale nie są obowiązkowe."
+            },
+            "seoOptimized": {
+                "question": "Czy moja nowa strona internetowa będzie zoptymalizowana pod kątem pozycjonowania?",
+                "answer": "Tak, tworzymy nowoczesne witryny internetowe zgodne z aktualnymi wytycznymi Google. Dzięki temu strony są przygotowane do skutecznego pozycjonowania w wynikach wyszukiwania."
+            },
+            "creationTime": {
+                "question": "Jak długo trwa proces tworzenia strony internetowej?",
+                "answer": "Standardowe strony internetowe tworzymy w ciągu 48 godzin od otrzymania wszystkich niezbędnych informacji. Dla bardziej zaawansowanych projektów czas realizacji może być dłuższy."
+            },
+            "makingChanges": {
+                "question": "Czy mogę wprowadzać zmiany w trakcie tworzenia strony?",
+                "answer": "Tak, w procesie projektowania przewidziane są trzy rundy korekt. Możesz przedstawić nam swoje sugestie w każdym momencie tworzenia strony."
+            },
+            "ownership": {
+                "question": "Czy po zakończeniu projektu strona internetowa będzie moją własnością?",
+                "answer": "Tak, po zakończeniu projektu otrzymasz pełne prawa do strony wraz z wszystkimi niezbędnymi dostępami do jej zarządzania i kopią zapasową."
+            },
+            "mobileResponsive": {
+                "question": "Czy strona będzie odpowiednio wyświetlać się na urządzeniach mobilnych?",
+                "answer": "Tak, wszystkie nasze strony są responsywne, co oznacza, że będą się one poprawnie wyświetlać na różnych urządzeniach, w tym na tabletach, komputerach i smartfonach."
+            },
+            "educationalMaterials": {
+                "question": "Czy otrzymam materiały edukacyjne, jak zarządzać moją stroną internetową oraz inne przydatne materiały dotyczące poprawy obecności mojego biznesu w internecie?",
+                "answer": "Tak, po zakończeniu projektu strony WWW dostarczymy Ci materiały edukacyjne dotyczące zarządzania Twoją stroną oraz poradnik, jak poprawić widoczność Twojego biznesu w internecie."
+            }
+        }
+    },
+    "consultation": {
+        "title": "Masz jeszcze jakiekolwiek pytania?",
+        "description": "Umówmy się na krótką, bezpłatną rozmowę, podczas której odpowiemy na Twoje pytania!",
+        "button": "Uzyskaj bezpłatną konsultację"
+    },
+    "selectedProjects": {
+        "subtitle": "PORTFOLIO",
+        "title": "Wybrane Projekty",
+        "projects": {
+            "first": {
+                "name": "Prywatna Strona-Wizytówka",
+                "description": "Strona-Wizytówka to idealne rozwiązanie dla małych firm i freelancerów pragnących zaistnieć w internecie z kluczowymi informacjami o swojej działalności.",
+                "buttonText": "Przejdź do Strony"
+            },
+            "second": {
+                "name": "Strona Firmy Konsultacyjnej",
+                "description": "Strona Firmy to rozwiązanie dla różnych branż, takich jak opieka zdrowotna, księgowość czy prawo, umożliwiające skuteczną prezentację usług i wzmocnienie wizerunku firmy w internecie.",
+                "buttonText": "Przejdź do Strony"
+            }
+        }
+    },
+    "teamSection": {
+        "subtitle": "ZESPÓŁ",
+        "title": "Zespół Webokraft",
+        "hello": "Cześć! 👋",
+        "introduction": "Nasz zespół składa się z profesjonalistów w dziedzinie rozwoju stron internetowych. Andrii, specjalista od SMM, i Youssef, ekspert SEO, wspólnie podnoszą obecność każdej firmy w internecie. 🌐💪",
+        "contactButton": "Kontakt"
+    },
+    "mission": {
+        "subtitle": "MOTTO",
+        "title": "Nasza Misja",
+        "part1": "Łącząc Kreatywność",
+        "part2": "i Digital Kompetencje",
+        "part3": "Pracujemy",
+        "part4": "Dla Twojej Firmy",
+        "part5": "By Osiągnąć Najlepszą",
+        "part6": "Wydajność"
+    },
+    "contact": {
+        "subtitle": "KONTAKT",
+        "title": "Masz Jeszcze Pytania?",
+        "header": "Napisz do nas!",
+        "description": "Odpowiemy, oferując darmową konsultację, która pomoże rozwinąć Twój biznes.",
+        "namePlaceholder": "Imię i nazwisko",
+        "emailPlaceholder": "Adres e-mail",
+        "messagePlaceholder": "Twoja wiadomość",
+        "privacyPolicy": "Zgadzam się z Polityką Prywatności",
+        "sendButton": "Wyślij Wiadomość"
     },
     "footer": {
-      "contact": "Skontaktuj się z nami",
-      "about": "O nas"
+        "newsletter": {
+            "title": "Zapisz się na nasz newsletter",
+            "description": "Zdobądź wiedzę o zarządzaniu obecnością online i zwiększ zainteresowanie Twoją marką.",
+            "emailPlaceholder": "Adres e-mail",
+            "subscribeButton": "→"
+        },
+        "webokraft": {
+            "title": "Webokraft",
+            "description": "Dynamiczna firma oferująca spersonalizowane rozwiązania, wspierające rozwój biznesu i zwiększające zasięg w internecie."
+        },
+        "menu": {
+            "services": "Usługi",
+            "faq": "FAQ",
+            "portfolio": "Portfolio",
+            "about": "O Nas",
+            "prices": "Ceny",
+            "contact": "Kontakt"
+        }
     }
-  }
+}

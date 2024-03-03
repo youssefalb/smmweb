@@ -6,6 +6,7 @@ import backgroundYellow from '../assets/images/yellow-bg.svg';
 import backgroundPurple from '../assets/images/purple-bg.svg';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useTranslation } from 'react-i18next';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,6 +39,8 @@ const ServiceCard = React.forwardRef<HTMLDivElement, ServiceCardProps>(({
 ServiceCard.displayName = 'ServiceCard';
 
 const Services: React.FC = () => {
+    const { t } = useTranslation();
+
     const leftCardRef = useRef<HTMLDivElement>(null);
     const rightCardRef = useRef<HTMLDivElement>(null);
     const middleCardRef = useRef<HTMLDivElement>(null);
@@ -70,31 +73,31 @@ const Services: React.FC = () => {
         <section id="services">
             <div className="bg-gray-100 py-10">
                 <div className="text-center">
-                    <p className="uppercase text-sm text-gray-500 mb-2">Nasze usługi</p>
-                    <h2 className="text-4xl font-bold mb-20">Co Oferujemy?</h2>
+                    <p className="uppercase text-sm text-gray-500 mb-2">{t('services.subtitle')}</p>
+                    <h2 className="text-4xl font-bold mb-20">{t('services.title')}</h2>
                 </div>
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <ServiceCard
                         ref={leftCardRef}
                         icon={speakerIcon}
-                        title="Zarządzanie Mediami Społecznościowymi"
-                        description="Tworzenie i zarządzanie kontami, projektowanie postów, edycja wideo, reklama."
+                        title={t('services.socialMediaManagement.title')}
+                        description={t('services.socialMediaManagement.description')}
                         background={backgroundPurple}
                         textColor="text-white"
                     />
                     <ServiceCard
                         ref={middleCardRef}
                         icon={webIcon}
-                        title="Projektowanie Stron Internetowych"
-                        description="Tworzenie strony internetowej z zachwycającą grafiką i doświadczeniem użytkownika."
+                        title={t('services.webDesign.title')}
+                        description={t('services.webDesign.description')}
                         background={backgroundYellow}
                         textColor="text-black"
                     />
                     <ServiceCard
                         ref={rightCardRef}
                         icon={searchIcon}
-                        title="SEO Optymalizacja"
-                        description="Zwiększ widoczność i przyciągnij organiczny ruch dzięki naszym technikom SEO."
+                        title={t('services.seoOptimization.title')}
+                        description={t('services.seoOptimization.description')}
                         background={backgroundPurple}
                         textColor="text-white"
                     />

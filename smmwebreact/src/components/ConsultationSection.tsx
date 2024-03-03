@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ConsultationSection = () => {
+    const { t } = useTranslation();
+
     return (
         <div className="flex min-h-52 items-center justify-center bg-white relative px-6 py-32">
 
@@ -23,13 +26,13 @@ const ConsultationSection = () => {
                 {/* Right side - Content, set a higher z-index to ensure visibility over the decorative image */}
                 <div className="w-7/10 p-10 relative z-20">
                     <h2 className="text-4xl font-bold text-white">
-                        Masz jeszcze jakiekolwiek pytania?
+                        {t('consultation.title')}
                     </h2>
                     <p className="mt-4 text-lg text-white mb-8">
-                        Umówmy się na krótką, bezpłatną rozmowę, podczas której odpowiemy na Twoje pytania!
+                    {t('consultation.description')}
                     </p>
                     <a href="#contact" className="bg-black text-white font-bold py-3 px-4 hover:bg-purple-800 transition-colors my-4 rounded-lg">
-                        Uzyskaj bezpłatną konsultację
+                    {t('consultation.button')}
                     </a>
                 </div>
 

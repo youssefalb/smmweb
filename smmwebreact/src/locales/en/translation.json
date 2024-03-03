@@ -1,10 +1,192 @@
 {
+    "navbar": {
+        "services": "Services",
+        "process": "Process",
+        "portfolio": "Portfolio",
+        "faq": "FAQ",
+        "pricing": "Pricing",
+        "about": "About Us",
+        "freeConsultation": "Free Consultation"
+    },
     "hero": {
-      "title": "Welcome to our website",
-      "subtitle": "Here is a subtitle"
+        "titlePartOne": "Your Company in",
+        "titlePartTwo": "the Internet!",
+        "description": "We enable companies to use innovative digital solutions that create lasting impressions. Raise your brand with us!",
+        "contactButton": "Contact Us",
+        "servicesButton": "Services",
+        "websiteOffer": "Website starting from",
+        "price": "990 PLN",
+        "codeNote": "with code #webokraft",
+        "helpNote": "We help industries"
+    },
+    "services": {
+        "subtitle": "OUR SERVICES",
+        "title": "What We Offer?",
+        "socialMediaManagement": {
+            "title": "Social Media Management",
+            "description": "Creation and management of accounts, designing posts, video editing, advertising."
+        },
+        "webDesign": {
+            "title": "Web Design",
+            "description": "Building websites with stunning graphics and user experience."
+        },
+        "seoOptimization": {
+            "title": "SEO Optimization",
+            "description": "Increase visibility and attract organic traffic with our SEO techniques."
+        }
+    },
+    "cooperationPlan": {
+        "subtitle": "WORK SCHEDULE",
+        "title": "Cooperation Plan",
+        "steps": {
+            "interview": {
+                "title": "Interview",
+                "description": "We conduct an interview to understand your needs and establish priorities."
+            },
+            "design": {
+                "title": "Design",
+                "description": "Based on the collected requirements, we create a graphic design of your website."
+            },
+            "implementation": {
+                "title": "Implementation",
+                "description": "Our webmasters combine graphics and content into a whole and ensure the site displays well on every device."
+            },
+            "acceptance": {
+                "title": "Acceptance and Implementation",
+                "description": "Even before the website is published online, we present you with the final project for review and acceptance."
+            }
+        }
+    },
+    "package": {
+        "subtitle": "STANDARD WEBSITE",
+        "title": "What's in the Package?",
+        "graphicDesign": {
+            "title": "Graphic Design",
+            "description": "Professional website graphic design tailored to the individual needs of the client"
+        },
+        "mobileVersion": {
+            "title": "Mobile Version",
+            "description": "We adapt the site for mobile devices, ensuring a smooth user experience."
+        },
+        "privacy": {
+            "title": "Privacy",
+            "description": "We ensure that the site complies with current privacy and data protection regulations"
+        },
+        "fastLoading": {
+            "title": "Fast Loading",
+            "description": "We optimize site loading speed, which translates into better search engine rankings and user satisfaction"
+        },
+        "seoOptimization": {
+            "title": "SEO Optimization",
+            "description": "Increase the visibility of your site in search results through advanced SEO strategies."
+        },
+        "trainingAndConsulting": {
+            "title": "Training & Consulting",
+            "description": "We offer professional training to help you better manage the website and digital strategies."
+        }
+    },
+    "faq": {
+        "subtitle": "FAQ",
+        "title": "Frequently Asked Questions",
+        "description": "Answers to Your Questions",
+        "questions": {
+            "additionalFees": {
+                "question": "Are there any additional fees associated with website creation?",
+                "answer": "Payment for creating a website is one-time. You will receive a detailed quote from us before starting work, which will remain unchanged throughout the project. You can opt for additional services that are chargeable, but they are not mandatory."
+            },
+            "seoOptimized": {
+                "question": "Will my new website be optimized for SEO?",
+                "answer": "Yes, we create modern websites that comply with the current Google guidelines. This ensures that the sites are prepared for effective positioning in search results."
+            },
+            "creationTime": {
+                "question": "How long does the process of creating a website take?",
+                "answer": "Standard websites are created within 48 hours of receiving all necessary information. For more advanced projects, the completion time may be longer."
+            },
+            "makingChanges": {
+                "question": "Can I make changes during the website creation process?",
+                "answer": "Yes, the design process includes three rounds of revisions. You can present your suggestions at any time during the creation of the site."
+            },
+            "ownership": {
+                "question": "Will I own the website after the project is completed?",
+                "answer": "Yes, after the project is completed, you will receive full rights to the site along with all necessary access for its management and a backup copy."
+            },
+            "mobileResponsive": {
+                "question": "Will the site display properly on mobile devices?",
+                "answer": "Yes, all our sites are responsive, meaning they will display correctly on various devices, including tablets, computers, and smartphones."
+            },
+            "educationalMaterials": {
+                "question": "Will I receive educational materials on how to manage my website and other useful materials for improving my business's online presence?",
+                "answer": "Yes, after completing the website project, we will provide you with educational materials on managing your site and a guide on how to improve the visibility of your business online."
+            }
+        }
+    },
+    "consultation": {
+        "title": "Do you have any more questions?",
+        "description": "Let's arrange a short, free consultation during which we will answer your questions!",
+        "button": "Get a free consultation"
+    },
+    "selectedProjects": {
+        "subtitle": "PORTFOLIO",
+        "title": "Selected Projects",
+        "projects": {
+            "first": {
+                "name": "Private Portfolio Website",
+                "description": "The Business Card Website is the perfect solution for small businesses and freelancers wanting to establish an online presence with key information about their activities.",
+                "buttonText": "Go to Website"
+            },
+            "second": {
+                "name": "Consulting Company Website",
+                "description": "The Company Website is a solution for various industries such as healthcare, accounting, or law, enabling effective presentation of services and strengthening the company's image online.",
+                "buttonText": "Go to Website"
+            }
+        }
+    },
+    "teamSection": {
+        "subtitle": "ABOUT US",
+        "title": "Webokraft Team",
+        "hello": "Hello! 👋",
+        "introduction": "Our team consists of professionals in the field of web development. Andrii, an SMM specialist, and Youssef, an SEO expert, together elevate the presence of every company on the internet. 🌐💪",
+        "contactButton": "Contact"
+    },
+    "mission": {
+        "subtitle": "MOTTO",
+        "title": "Our Mission",
+        "part1": "Combining Creativity",
+        "part2": "& Digital Expertise",
+        "part3": "We Work",
+        "part4": "For Your Business",
+        "part5": "To Eearn The Best",
+        "part6": "Performance"
+    },
+    "contact": {
+        "subtitle": "CONTACT",
+        "title": "Do You Have More Questions?",
+        "header": "Write to us!",
+        "description": "We will answer by offering a free consultation that will help grow your business.",
+        "namePlaceholder": "Name and surname",
+        "emailPlaceholder": "E-mail address",
+        "messagePlaceholder": "Your message",
+        "privacyPolicy": "I agree to the Privacy Policy",
+        "sendButton": "Send Message"
     },
     "footer": {
-      "contact": "Contact Us",
-      "about": "About Us"
+        "newsletter": {
+            "title": "Sign up for our newsletter",
+            "description": "Gain knowledge on managing online presence and increase interest in your brand.",
+            "emailPlaceholder": "E-mail address",
+            "subscribeButton": "→"
+        },
+        "webokraft": {
+            "title": "Webokraft",
+            "description": "A dynamic company offering personalized solutions, supporting business development and increasing reach on the internet."
+        },
+        "menu": {
+            "services": "Services",
+            "faq": "FAQ",
+            "portfolio": "Portfolio",
+            "about": "About Us",
+            "prices": "Prices",
+            "contact": "Contact"
+        }
     }
-  }
+}

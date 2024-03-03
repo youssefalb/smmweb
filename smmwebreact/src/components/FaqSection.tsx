@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import backgroundImage from '../assets/images/faq.svg';  // Update the path to your actual image
 import SectionContainer from './templates/SectionContainer';
+import { useTranslation } from 'react-i18next';
 
 // Define a type for the FAQ data to ensure type safety
 interface FAQItem {
@@ -8,25 +9,26 @@ interface FAQItem {
     answer: string;
 }
 
-// Sample FAQ data
-const faqs: FAQItem[] = [
-    { question: 'Czy są jakieś dodatkowe opłaty związane z tworzeniem strony internetowej?', answer: 'Płatność za stworzenie witryny internetowej jest jednorazowa. Otrzymasz od nas szczegółową wycenę przed rozpoczęciem prac, która pozostanie niezmieniona przez cały czas tworzenia projektu. Możesz zdecydować się na dodatkowe usługi, które są płatne, ale nie są obowiązkowe.' },
-    { question: 'Czy moja nowa strona internetowa będzie zoptymalizowana pod kątem pozycjonowania?', answer: 'Tak, tworzymy nowoczesne witryny internetowe zgodne z aktualnymi wytycznymi Google. Dzięki temu strony są przygotowane do skutecznego pozycjonowania w wynikach wyszukiwania.' },
-    { question: 'Jak długo trwa proces tworzenia strony internetowej?', answer: 'Standardowe strony internetowe tworzymy w ciągu 48 godzin od otrzymania wszystkich niezbędnych informacji. Dla bardziej zaawansowanych projektów czas realizacji może być dłuższy.' },
-    { question: 'Czy mogę wprowadzać zmiany w trakcie tworzenia strony?', answer: 'Tak, w procesie projektowania przewidziane są trzy rundy korekt. Możesz przedstawić nam swoje sugestie w każdym momencie tworzenia strony.' },
-    { question: 'Czy po zakończeniu projektu strona internetowa będzie moją własnością?', answer: 'Tak, po zakończeniu projektu otrzymasz pełne prawa do strony wraz z wszystkimi niezbędnymi dostępami do jej zarządzania i kopią zapasową.' },
-    { question: 'Czy strona będzie odpowiednio wyświetlać się na urządzeniach mobilnych?', answer: 'Tak, wszystkie nasze strony są responsywne, co oznacza, że będą się one poprawnie wyświetlać na różnych urządzeniach, w tym na tabletach, komputerach i smartfonach.' },
-    { question: 'Czy otrzymam materiały edukacyjne, jak zarządzać moją stroną internetową oraz inne przydatne materiały dotyczące poprawy obecności mojego biznesu w internecie?', answer: 'Tak, po zakończeniu projektu strony WWW dostarczymy Ci materiały edukacyjne dotyczące zarządzania Twoją stroną oraz poradnik, jak poprawić widoczność Twojego biznesu w internecie.' }
-];
-
 const FaqSection: React.FC = () => {
+    const { t } = useTranslation();
+
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+    const faqs = [
+        { question: t('faq.questions.additionalFees.question'), answer: t('faq.questions.additionalFees.answer') },
+        { question: t('faq.questions.seoOptimized.question'), answer: t('faq.questions.seoOptimized.answer') },
+        { question: t('faq.questions.creationTime.question'), answer: t('faq.questions.creationTime.answer') },
+        { question: t('faq.questions.makingChanges.question'), answer: t('faq.questions.makingChanges.answer') },
+        { question: t('faq.questions.ownership.question'), answer: t('faq.questions.ownership.answer') },
+        { question: t('faq.questions.mobileResponsive.question'), answer: t('faq.questions.mobileResponsive.answer') },
+        { question: t('faq.questions.educationalMaterials.question'), answer: t('faq.questions.educationalMaterials.answer') }
+    ];
 
     return (
         <section id="faq">
             <SectionContainer
-                title="Często Zadawane Pytania"
-                subtitle="faq"
+                title={t('faq.title')}
+                subtitle={t('faq.subtitle')}
             >
                 <div className="max-w-6xl mx-auto relative flex flex-wrap">
                     {/* FAQ cards section, taking 2/3 of the width but offset to the left */}
@@ -50,7 +52,7 @@ const FaqSection: React.FC = () => {
                         <div className="hidden lg:block h-full w-full bg-cover bg-no-repeat rounded-2xl" style={{ backgroundImage: `url(${backgroundImage})` }}>
                             {/* Text positioned at the top right corner */}
                             <div className="absolute top-16 right-12 w-1/3">
-                                <h2 className="text-white text-4xl font-bold">Odpowiedzi na Twoje pytania</h2>
+                                <h2 className="text-white text-4xl font-bold">{t('faq.description')}</h2>
                             </div>
                         </div>
                     </div>

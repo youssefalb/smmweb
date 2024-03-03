@@ -3,11 +3,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import logo from '../assets/images/logo.svg';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from 'react-i18next';
 
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Navbar() {
+    const { t } = useTranslation();
+
     const logoRef = useRef(null);
     const navLinksRef = useRef<(HTMLAnchorElement | null)[]>([]);
     navLinksRef.current = [];
@@ -119,7 +122,7 @@ export default function Navbar() {
                     onClick={() => handleNavLinkClick('contact')}
                     ref={addToNavLinksRef} // Use the ref adding function here
                 >
-                    Bezpłatna Konsultacja
+                    {t('navbar.freeConsultation')}
                 </a>
                 {/* Hamburger Icon for mobile */}
                 <div className="md:hidden">
