@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import heroImage from '../assets/images/hero.png';
 import gsap from 'gsap';
+import { useTranslation } from 'react-i18next';
 
 export default function HeroSection() {
+    const { t } = useTranslation();
+
     // References to DOM elements you want to animate
     const textRef = useRef(null);
     const imageRef = useRef(null);
@@ -23,7 +26,7 @@ export default function HeroSection() {
         <section id="hero" className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl h-[80vh] mx-auto flex flex-col lg:flex-row justify-between items-center">
                 <div className="lg:flex-1" ref={textRef}>
-                    <h1 className="text-7xl font-bold text-gray-900 mb-6">Twoja Firma w <span className="text-purple">Internecie!</span></h1>
+                    <h1 className="text-7xl font-bold text-gray-900 mb-6">{t('hero.title')} <span className="text-purple">Internecie!</span></h1>
                     <p className="text-lg text-black mb-4">
                         Umożliwiamy firmom korzystanie z innowacyjnych rozwiązań cyfrowych, które tworzą trwałe wrażenia. Podnieś swoją markę razem z nami!
                     </p>

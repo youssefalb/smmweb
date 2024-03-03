@@ -1,0 +1,10 @@
+{
+    "hero": {
+      "title": "Welcome to our website",
+      "subtitle": "Here is a subtitle"
+    },
+    "footer": {
+      "contact": "Contact Us",
+      "about": "About Us"
+    }
+  }
