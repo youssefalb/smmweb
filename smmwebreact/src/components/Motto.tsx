@@ -11,7 +11,7 @@ const CustomSection = () => {
             subtitle={t('mission.subtitle')}
             backgroundColor="bg-white"
         >
-            <div className="flex flex-col items-center justify-center space-y-2 md:space-y-4"> {/* Adjust space between rows */}
+            <div className="flex flex-col items-center justify-center space-y-2 md:space-y-4 mb-20"> {/* Adjust space between rows */}
                 {/* First Row */}
                 <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4"> {/* Adjust layout and spacing */}
                     <span className="text-2xl md:text-4xl  text-center">{t('mission.part1')}</span> {/* Adjust font size */}

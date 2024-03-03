@@ -71,7 +71,7 @@ const Services: React.FC = () => {
 
     return (
         <section id="services">
-            <div className="bg-gray-100 py-10">
+            <div className="bg-white py-20 mb-20">
                 <div className="text-center">
                     <p className="uppercase text-sm text-gray-500 mb-2">{t('services.subtitle')}</p>
                     <h2 className="text-4xl font-bold mb-20">{t('services.title')}</h2>
