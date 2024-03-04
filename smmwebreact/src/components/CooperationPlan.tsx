@@ -9,30 +9,42 @@ gsap.registerPlugin(ScrollTrigger);
 const CooperationPlan = () => {
     const { t } = useTranslation();
     const gridRef = useRef<HTMLDivElement>(null);
+    const subtitleRef = useRef<HTMLParagraphElement>(null);
+    const titleRef = useRef<HTMLHeadingElement>(null);
     useEffect(() => {
         if (gridRef.current) {
-            // Convert NodeList to an array for GSAP to animate each item individually
             const gridItems = Array.from(gridRef.current.children);
 
-            gsap.timeline({
+            const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: gridRef.current,
-                    start: "top bottom-=100", // Adjust this value based on your needs
-                    toggleActions: "play none none none",
+                    start: "top bottom-=100",
+                    end: "bottom top",
+                    toggleActions: "play none play none",
+                    scrub: 1,
                 }
             })
                 .fromTo(gridItems,
-                    { autoAlpha: 0, y: 50 }, // Initial state of the elements
+                    { autoAlpha: 0, y: 50 },
                     {
                         autoAlpha: 1,
                         y: 0,
-                        duration: 1,
-                        stagger: 0.2, // Time between the start of each item's animation
-                        ease: "back.out(1.7)", // Easing function for a slight overshoot
+                        duration: 2,
+                        stagger: 0.2,
+                        ease: "back.out(1.7)",
                     }
                 );
+
+            // Cleanup function
+            return () => {
+                if (tl.scrollTrigger) {
+                    tl.scrollTrigger.kill();
+                }
+                tl.kill();
+            };
         }
     }, [t]);
+
 
     return (
         <section id="process">
