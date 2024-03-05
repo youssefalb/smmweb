@@ -47,6 +47,11 @@ html {
     margin-right: 10px; 
 }
 
+
+html, body {
+    overflow-x: hidden;
+}
+
 .nav-link::before {
     content: '';
     position: absolute;
