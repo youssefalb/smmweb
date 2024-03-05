@@ -1,15 +1,24 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import SectionContainer from './templates/SectionContainer';
 import { useTranslation } from 'react-i18next';
+import PrivacyPolicyPopup from './PrivacyPolicyPopup'; // Import your Privacy Policy Popup component here
+
 
 const ContactForm = () => {
     const { t } = useTranslation();
 
     const form = useRef<HTMLFormElement>(null);
+    const [showPolicy, setShowPolicy] = useState(false); // State to control the visibility of the Privacy Policy popup
+    const [policyChecked, setPolicyChecked] = useState(false); // State to track if the policy has been accepted
 
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if (!policyChecked) {
+            alert('You must agree to the Privacy Policy.');
+            return;
+        }
 
         if (form.current) {
             emailjs.sendForm(
@@ -27,6 +36,7 @@ const ContactForm = () => {
                 });
 
             form.current.reset();
+            setPolicyChecked(false); // Reset the checkbox after form submission
         }
     };
 
@@ -62,11 +72,11 @@ const ContactForm = () => {
                             </div>
                             <div className="mb-4">
                                 <label className="flex items-center text-gray-600">
-                                    <input type="checkbox" className="form-checkbox" />
-                                    <span className="ml-2">{t('contact.privacyPolicy')}</span>
+                                    <input type="checkbox" className="form-checkbox"  checked={policyChecked} onChange={(e) => setPolicyChecked(e.target.checked)} />
+                                    <span className="ml-2" onClick={() => setShowPolicy(true)}>{t('contact.privacyPolicy')}</span>
                                 </label>
                             </div>
-                            
+                            {showPolicy && <PrivacyPolicyPopup />}
                         </div>
                         <div> {/* Second column for message */}
                             <div className="mb-4 ">
