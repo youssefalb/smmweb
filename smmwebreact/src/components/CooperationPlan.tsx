@@ -18,8 +18,8 @@ const CooperationPlan = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: gridRef.current,
-                    start: "top bottom-=100",
-                    end: "bottom top",
+                    start: "top center+=300",
+                    end: "top center",
                     toggleActions: "play none play none",
                     scrub: 1,
                 }

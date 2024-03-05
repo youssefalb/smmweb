@@ -69,8 +69,8 @@ const FeaturesSection = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: featuresRef.current,
-                    start: "top bottom-=100",
-                    end: "bottom top",
+                    start: "top center+=200",
+                    end: "top center",
                     toggleActions: "play none play none",
                     scrub: 1,
                 }
@@ -80,7 +80,7 @@ const FeaturesSection = () => {
                     {
                         y: 0,
                         autoAlpha: 1,
-                        duration: 3,
+                        duration: 1,
                         stagger: 0.2,
                         ease: "back.out(1.7)",
                     }
