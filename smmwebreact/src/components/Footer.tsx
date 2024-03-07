@@ -6,7 +6,7 @@ const Footer = () => {
 
     return (
         <footer className="bg-gray-900 text-white p-10 rounded-t-3xl">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-12">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 md:space-x-5 lg:grid-cols-3 py-12">
 
                 <div className="">
                     <h3 className="font-bold text-lg mb-2">{t('footer.newsletter.title')}</h3>
@@ -20,7 +20,7 @@ const Footer = () => {
                         <button className="bg-purple p-2 rounded-r">→</button>
                     </div>
                 </div>
-                <div className='ml-24'>
+                <div className='lg:ml-24 mt-10'>
                     <h2 className="font-bold text-lg mb-4">{t('footer.webokraft.title')}</h2>
                     <p className='text-gray-400'>{t('footer.webokraft.description')}</p>
 
@@ -28,7 +28,7 @@ const Footer = () => {
 
                 </div>
                 {/* Services */}
-                <div className='ml-24'>
+                <div className='lg:ml-24 mt-10'>
                     <h3 className="font-bold text-lg mb-2">Menu</h3>
                     <ul>
                         <ul>
@@ -43,12 +43,12 @@ const Footer = () => {
                 </div>
 
                 {/* Social Media Icons */}
-                <div className="flex justify-center lg:justify-start mt-8 lg:mt-0 ml-24">
+                {/* <div className="flex justify-center lg:justify-start mt-8 lg:mt-0 ml-24">
                     <a href="#" className="mr-4">wa</a>
                     <a href="#" className="mr-4">fb</a>
                     <a href="#" className="mr-4">tw</a>
                     <a href="#" className="mr-4">ig</a>
-                </div>
+                </div> */}
             </div>
         </footer>
     );
