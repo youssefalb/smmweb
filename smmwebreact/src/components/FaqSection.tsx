@@ -59,7 +59,7 @@ const FaqSection: React.FC = () => {
             >
                 <div className="max-w-6xl mx-auto relative flex flex-wrap">
                     {/* FAQ cards section, taking 2/3 of the width but offset to the left */}
-                    <div className="w-full lg:w-2/3 lg:-mr-1/3 p-8 z-10">
+                    <div className="w-full lg:w-2/3 lg:-mr-1/3 p-6 z-10">
                         {faqs.map((faq, index) => (
                             <div key={index}
                                 ref={(el) => (faqsRef.current[index] = el)}
