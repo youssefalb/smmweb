@@ -25,7 +25,6 @@ function App() {
       <FeaturesSection />
       <FaqSection />
       <ConsultationSection />
-      {/* <Pricing/> */}
       <BestWorkSection />
       <TeamSection />
       <Motto />
