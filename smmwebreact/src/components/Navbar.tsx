@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Navbar() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     const logoRef = useRef(null);
     const navLinksRef = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -17,19 +17,18 @@ export default function Navbar() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('');
+    const [currentLang, setCurrentLang] = useState(i18n.language);
 
     const sections = [
         { id: 'home', name: 'Home' },
-        { id: 'services', name: 'Usługi' },
-        { id: 'process', name: 'Proces' },
-        { id: 'portfolio', name: 'Portfolio' },
-        { id: 'faq', name: 'FAQ' },
-        { id: 'pricing', name: 'Cennik' },
-        { id: 'aboutus', name: 'O Nas' },
-        { id: 'contact', name: 'Kontakt' }
+        { id: 'services', name: t('footer.menu.services')},
+        { id: 'faq', name: t('footer.menu.faq') },
+        { id: 'portfolio', name: t('footer.menu.portfolio') },
+        { id: 'aboutus', name: t('footer.menu.about') },
+        { id: 'contact', name: t('footer.menu.contact') }
     ];
     const handleScroll = () => {
-        const sections = ['home', 'services', 'process', 'portfolio', 'faq', 'pricing', 'aboutus', 'contact'];
+        const sections = ['home', 'services', 'faq', 'portfolio', 'aboutus', 'contact'];
 
         let activeSectionTemp = '';
         sections.forEach((section) => {
@@ -80,10 +79,16 @@ export default function Navbar() {
 
     };
 
+    const changeLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+        setCurrentLang(lng);
+    };
+
     return (
         <header className="sticky top-0 z-50 bg-white p-4 w-full border-b">
             <div className="max-w-6xl mx-auto flex justify-between items-center">
                 {/* Logo section */}
+                <div className="flex items-center">
                 <a
                     href="#hero"
                     className={`text-black text-2xl font-bold`}
@@ -93,15 +98,20 @@ export default function Navbar() {
                     <img src={logo} alt="WeboKraft" ref={logoRef} style={{ width: '145px', height: 'auto' }} />
                 </a>
 
+                <div className="ml-4">
+                        <button className="text-gray-600 hover:text-gray-900" onClick={() => changeLanguage('en')}>EN</button> |  
+                        <button className="text-gray-600 hover:text-gray-900" onClick={() => changeLanguage('pl')}>PL</button>
+                    </div>
+                </div>
+                
+
                 {/* Desktop Menu */}
-                <nav className="hidden md:flex justify-center flex-1 space-x-8">
+                <nav className="hidden lg:flex justify-center flex-1 space-x-8">
                     {[
-                        { id: 'services', name: 'Usługi' },
-                        { id: 'process', name: 'Proces' },
-                        { id: 'portfolio', name: 'Portfolio' },
-                        { id: 'faq', name: 'FAQ' },
-                        { id: 'pricing', name: 'Cennik' },
-                        { id: 'aboutus', name: 'O Nas' }
+                        { id: 'services', name: t('footer.menu.services') },
+                        { id: 'faq', name: t('footer.menu.faq') },
+                        { id: 'portfolio', name: t('footer.menu.portfolio') },
+                        { id: 'aboutus', name: t('footer.menu.about') }
                     ].map((section, index) => (
                         <a
                             key={section.id}
@@ -118,14 +128,14 @@ export default function Navbar() {
                 {/* CTA button */}
                 <a
                     href="#contact"
-                    className="hidden md:block text-white bg-black px-4 py-2 rounded-md"
+                    className="hidden lg:block text-white bg-black px-4 py-2 rounded-md"
                     onClick={() => handleNavLinkClick('contact')}
                     ref={addToNavLinksRef} // Use the ref adding function here
                 >
                     {t('navbar.freeConsultation')}
                 </a>
                 {/* Hamburger Icon for mobile */}
-                <div className="md:hidden">
+                <div className="lg:hidden">
                     <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
@@ -135,49 +145,35 @@ export default function Navbar() {
             </div>
 
             {isMenuOpen && (
-                <div className="absolute top-full right-0 w-full bg-white shadow-lg md:hidden">
+                <div className="absolute top-full right-0 w-full bg-white shadow-lg lg:hidden">
                     <nav className="flex flex-col p-4">
                         <a
                             href="#services"
                             onClick={() => handleNavLinkClick('services')}
                             className={`nav-link ${activeSection === 'services' ? 'active' : ''}`}
                         >
-                            Usługi
-                        </a>
-                        <a
-                            href="#process"
-                            onClick={() => handleNavLinkClick('process')}
-                            className={`nav-link ${activeSection === 'process' ? 'active' : ''}`}
-                        >
-                            Proces
-                        </a>
-                        <a
-                            href="#portfolio"
-                            onClick={() => handleNavLinkClick('portfolio')}
-                            className={`nav-link ${activeSection === 'portfolio' ? 'active' : ''}`}
-                        >
-                            Portfolio
+                            {t('footer.menu.services')}
                         </a>
                         <a
                             href="#faq"
                             onClick={() => handleNavLinkClick('faq')}
                             className={`nav-link ${activeSection === 'faq' ? 'active' : ''}`}
                         >
-                            FAQ
+                            {t('footer.menu.faq')}
                         </a>
                         <a
-                            href="#pricing"
-                            onClick={() => handleNavLinkClick('pricing')}
-                            className={`nav-link ${activeSection === 'pricing' ? 'active' : ''}`}
+                            href="#portfolio"
+                            onClick={() => handleNavLinkClick('portfolio')}
+                            className={`nav-link ${activeSection === 'portfolio' ? 'active' : ''}`}
                         >
-                            Cennik
+                            {t('footer.menu.portfolio')}
                         </a>
                         <a
                             href="#aboutus"
                             onClick={() => handleNavLinkClick('aboutus')}
                             className={`nav-link ${activeSection === 'aboutus' ? 'active' : ''}`}
                         >
-                            O nas
+                            {t('footer.menu.about')}
                         </a>
                     </nav>
                 </div>

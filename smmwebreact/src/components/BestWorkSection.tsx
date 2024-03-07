@@ -17,6 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageUrl,
     const { t } = useTranslation();
 
     return (
+        <section id="portfolio">
         <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg flex flex-col items-center text-left">
             <div className="w-full bg-cover h-48" style={{ backgroundImage: `url(${imageUrl})` }}></div>
             <div className="flex-1 p-6">
@@ -27,6 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageUrl,
                 </button>
             </div>
         </div>
+        </section>
     );
 };
 

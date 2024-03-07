@@ -2,8 +2,7 @@ import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import SectionContainer from './templates/SectionContainer';
 import { useTranslation } from 'react-i18next';
-import PrivacyPolicyPopup from './PrivacyPolicyPopup'; // Import your Privacy Policy Popup component here
-
+import PrivacyPolicyPopup from './PrivacyPolicyPopup'; // Make sure this component is correctly imported
 
 const ContactForm = () => {
     const { t } = useTranslation();
@@ -40,6 +39,10 @@ const ContactForm = () => {
         }
     };
 
+    const togglePolicyPopup = () => {
+        setShowPolicy(prev => !prev);
+    };
+
     return (
         <section id="contact">
             <SectionContainer
@@ -51,7 +54,7 @@ const ContactForm = () => {
                     
                     <form ref={form} onSubmit={sendEmail} className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div> {/* First column for name, email, policy, and button */}
-                        <p className="text-gray-600 mb-8">{t('contact.description')}</p>
+                            <p className="text-gray-600 mb-8">{t('contact.description')}</p>
                             <div className="mb-4">
                                 <input
                                     type="text"
@@ -70,20 +73,30 @@ const ContactForm = () => {
                                     required
                                 />
                             </div>
-                            <div className="mb-4">
-                                <label className="flex items-center text-gray-600">
-                                    <input type="checkbox" className="form-checkbox"  checked={policyChecked} onChange={(e) => setPolicyChecked(e.target.checked)} />
-                                    <span className="ml-2" onClick={() => setShowPolicy(true)}>{t('contact.privacyPolicy')}</span>
-                                </label>
+                            <div className="flex items-center mb-4">
+                                <input 
+                                    type="checkbox" 
+                                    className="form-checkbox"  
+                                    checked={policyChecked} 
+                                    onChange={(e) => setPolicyChecked(e.target.checked)} 
+                                />
+                                <span className="ml-2">{t('contact.privacyPolicyOne')}</span>
+                                <button 
+                                    type="button" 
+                                    className="ml-1 text-purple-600 underline focus:outline-none"
+                                    onClick={togglePolicyPopup}
+                                >
+                                    {t('contact.privacyPolicyTwo')}
+                                </button>
                             </div>
                             {showPolicy && <PrivacyPolicyPopup />}
                         </div>
                         <div> {/* Second column for message */}
-                            <div className="mb-4 ">
+                            <div className="mb-4">
                                 <textarea
                                     name="message"
                                     placeholder={t('contact.messagePlaceholder')}
-                                    className="w-full  px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-purple"
+                                    className="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-purple"
                                     rows={9} // Adjust based on your design
                                     required
                                 ></textarea>
@@ -102,8 +115,6 @@ const ContactForm = () => {
 
         </section>
     );
-
-
 };
 
 export default ContactForm;

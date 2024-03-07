@@ -166,7 +166,8 @@
         "namePlaceholder": "Name and surname",
         "emailPlaceholder": "E-mail address",
         "messagePlaceholder": "Your message",
-        "privacyPolicy": "I agree to the Privacy Policy",
+        "privacyPolicyOne": "I agree to the ",
+        "privacyPolicyTwo": "Privacy Policy",
         "sendButton": "Send Message"
     },
     "footer": {
