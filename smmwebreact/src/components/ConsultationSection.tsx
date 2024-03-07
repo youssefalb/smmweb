@@ -47,8 +47,8 @@ const ConsultationSection = () => {
 
     return (
         <div ref={sectionRef} className="flex min-h-52 items-center justify-center bg-white relative px-6 py-32">
-            <div className="flex items-stretch bg-purple max-w-6xl rounded-3xl relative overflow-hidden">
-                <div className="flex-1 self-stretch w-4/10">
+            <div className="flex items-stretch bg-purple max-w-6xl rounded-2xl relative overflow-hidden">
+                <div className="hidden md:block self-stretch">
                     <img
                         src="/vector_white.png"
                         alt="Decorative element"
@@ -57,11 +57,11 @@ const ConsultationSection = () => {
                     <img
                         src="/bench-accounting.png"
                         alt="Person working on a laptop"
-                        className="h-full w-full object-center object-cover rounded-l-3xl"
+                        className="h-full w-full object-center object-cover rounded-l-2xl"
                     />
                 </div>
 
-                <div className="w-7/10 p-10 relative z-20">
+                <div className="p-8 relative z-20">
                     <h2 className="text-4xl font-bold text-white">
                         {t('consultation.title')}
                     </h2>
@@ -76,7 +76,7 @@ const ConsultationSection = () => {
                 <img
                     src="/vector_yellow.png"
                     alt="Decorative element"
-                    className="absolute bottom-8 right-8 translate-x-1/2 translate-y-1/2 z-10"
+                    className="hidden md:block absolute bottom-8 right-8 translate-x-1/2 translate-y-1/2 z-10"
                     style={{ width: '11%' }}
                 />
             </div>

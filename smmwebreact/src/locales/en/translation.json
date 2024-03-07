@@ -123,7 +123,7 @@
     "consultation": {
         "title": "Do you have any more questions?",
         "description": "Let's arrange a short, free consultation during which we will answer your questions!",
-        "button": "Get a free consultation"
+        "button": "Get consultation"
     },
     "selectedProjects": {
         "subtitle": "PORTFOLIO",
