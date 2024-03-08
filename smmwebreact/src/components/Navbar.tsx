@@ -21,7 +21,7 @@ export default function Navbar() {
 
     const sections = [
         { id: 'home', name: 'Home' },
-        { id: 'services', name: t('footer.menu.services')},
+        { id: 'services', name: t('footer.menu.services') },
         { id: 'faq', name: t('footer.menu.faq') },
         { id: 'portfolio', name: t('footer.menu.portfolio') },
         { id: 'aboutus', name: t('footer.menu.about') },
@@ -85,25 +85,25 @@ export default function Navbar() {
     };
 
     return (
-        <header className="sticky top-0 z-50 bg-white p-4 w-full border-b">
+        <header className="fixed top-0 z-50 bg-white p-4 w-full border-b">
             <div className="max-w-6xl mx-auto flex justify-between items-center">
                 {/* Logo section */}
                 <div className="flex items-center">
-                <a
-                    href="#hero"
-                    className={`text-black text-2xl font-bold`}
-                    onClick={() => handleNavLinkClick('hero')}
-                >
+                    <a
+                        href="#hero"
+                        className={`text-black text-2xl font-bold`}
+                        onClick={() => handleNavLinkClick('hero')}
+                    >
 
-                    <img src={logo} alt="WeboKraft" ref={logoRef} style={{ width: '145px', height: 'auto' }} />
-                </a>
+                        <img src={logo} alt="WeboKraft" ref={logoRef} style={{ width: '145px', height: 'auto' }} />
+                    </a>
 
-                <div className="ml-4">
-                        <button className="text-gray-600 hover:text-gray-900" onClick={() => changeLanguage('en')}>EN</button> |  
+                    <div className="ml-4">
+                        <button className="text-gray-600 hover:text-gray-900" onClick={() => changeLanguage('en')}>EN</button> |
                         <button className="text-gray-600 hover:text-gray-900" onClick={() => changeLanguage('pl')}>PL</button>
                     </div>
                 </div>
-                
+
 
                 {/* Desktop Menu */}
                 <nav className="hidden lg:flex justify-center flex-1 space-x-8">
