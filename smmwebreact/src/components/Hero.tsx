@@ -23,8 +23,8 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <section id="hero" className="bg-gray-100 pt-16 pb-20 px-8 sm:px-6 lg:px-8">
-            <div className="max-w-6xl h-[80vh] mx-auto flex flex-col lg:flex-row justify-between items-center">
+        <section id="hero" className="bg-gray-100 pt-20 pb-20 px-8 sm:px-6 lg:px-8">
+            <div className="max-w-6xl h-[90vh] mx-auto flex flex-col lg:flex-row justify-between items-center">
                 <div className="lg:flex-1" ref={textRef}>
                     <h1 className="text-7xl font-bold text-gray-900 mb-6">{t('hero.titlePartOne')} <span className="text-purple">{t('hero.titlePartTwo')}</span></h1>
                     <p className="text-lg text-black mb-4">
