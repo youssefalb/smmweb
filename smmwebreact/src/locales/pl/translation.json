@@ -6,7 +6,8 @@
         "faq": "FAQ",
         "pricing": "Cennik",
         "about": "O Nas",
-        "freeConsultation": "Bezpłatna Konsultacja"
+        "freeConsultation": "Bezpłatna Konsultacja",
+        "testimonials": "Referencje"
     },
     "hero": {
         "titlePartOne": "Twoja Firma w",
@@ -130,12 +131,12 @@
         "title": "Wybrane Projekty",
         "projects": {
             "first": {
-                "name": "Prywatna Strona-Wizytówka",
+                "name": "Strona Fundacji Charytatywnej",
                 "description": "Strona-Wizytówka to idealne rozwiązanie dla małych firm i freelancerów pragnących zaistnieć w internecie z kluczowymi informacjami o swojej działalności.",
                 "buttonText": "Przejdź do Strony"
             },
             "second": {
-                "name": "Strona Firmy Konsultacyjnej",
+                "name": "Strona Przychodni",
                 "description": "Strona Firmy to rozwiązanie dla różnych branż, takich jak opieka zdrowotna, księgowość czy prawo, umożliwiające skuteczną prezentację usług i wzmocnienie wizerunku firmy w internecie.",
                 "buttonText": "Przejdź do Strony"
             }
@@ -170,6 +171,15 @@
         "privacyPolicyTwo": "Polityką Prywatności",
         "sendButton": "Wyślij Wiadomość"
     },
+    "testimonials": {
+        "subtitle": "referencje",
+        "title": "Co o nas mówią",
+        "add": "Dodaj opinię",
+        "name": "Twoje imię",
+        "website": "Link do Twojej strony",
+        "testimonial": "Opinia",
+        "image": "Dodaj swoje zdjęcie"
+    },
     "footer": {
         "newsletter": {
             "title": "Zapisz się na nasz newsletter",
@@ -187,7 +197,8 @@
             "portfolio": "Portfolio",
             "about": "O Nas",
             "prices": "Ceny",
-            "contact": "Kontakt"
+            "contact": "Kontakt",
+            "testimonials": "Referencje"
         }
     }
 }

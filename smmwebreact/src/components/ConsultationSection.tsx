@@ -47,7 +47,7 @@ const ConsultationSection = () => {
 
     return (
         <div ref={sectionRef} className="flex min-h-52 items-center justify-center bg-white relative px-6 py-32">
-            <div className="flex items-stretch bg-green max-w-6xl rounded-2xl relative overflow-hidden">
+            <div className="flex items-stretch bg-gray-100 max-w-6xl rounded-2xl relative overflow-hidden">
                 <div className="hidden md:block self-stretch">
                     <img
                         src="/vector_white.png"
@@ -62,13 +62,13 @@ const ConsultationSection = () => {
                 </div>
 
                 <div className="p-8 relative z-20">
-                    <h2 className="text-4xl font-bold text-white">
+                    <h2 className="text-4xl font-bold text-black">
                         {t('consultation.title')}
                     </h2>
-                    <p className="mt-4 text-lg text-white mb-8">
+                    <p className="mt-4 text-lg text-black mb-8">
                         {t('consultation.description')}
                     </p>
-                    <a href="#contact" className="bg-black text-white font-bold py-3 px-4 hover:bg-purple-800 transition-colors my-4 rounded-lg">
+                    <a href="#contact" className="bg-purple text-white font-bold py-3 px-4 hover:bg-purple-800 transition-colors my-4 rounded-lg">
                         {t('consultation.button')}
                     </a>
                 </div>

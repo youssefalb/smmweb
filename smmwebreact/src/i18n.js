@@ -8,6 +8,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 // Importing translation files
 import translationEN from './locales/en/translation.json';
 import translationPL from './locales/pl/translation.json';
+import translationUA from './locales/ua/translation.json';
 
 // the translations
 const resources = {
@@ -16,6 +17,9 @@ const resources = {
   },
   pl: {
     translation: translationPL
+  },
+  ua: {
+    translation: translationUA
   }
 };
 

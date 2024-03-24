@@ -99,7 +99,7 @@ export default function Navbar() {
                     </a>
 
                     <div className="ml-4">
-                        <button className="text-gray-600 hover:text-gray-900" onClick={() => changeLanguage('en')}>EN</button> |
+                        <button className="text-gray-600 hover:text-gray-900" onClick={() => changeLanguage('ua')}>UA</button> |
                         <button className="text-gray-600 hover:text-gray-900" onClick={() => changeLanguage('pl')}>PL</button>
                     </div>
                 </div>

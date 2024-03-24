@@ -3,7 +3,8 @@ import { db } from '../firebase-config';
 import { collection, query, orderBy, onSnapshot } from 'firebase/firestore';
 import ReviewForm from './ReviewForm';
 import SectionContainer from './templates/SectionContainer';
-import { ReactComponent as QuotesIcon } from '../assets/icons/quote-icon.svg'; // Adjust the path as necessary
+import { ReactComponent as QuotesIcon } from '../assets/icons/quote-icon.svg'; // Adjust the path as necessary\
+import { useTranslation } from 'react-i18next';
 
 type Testimonial = {
   id: string;
@@ -16,6 +17,7 @@ type Testimonial = {
 };
 
 const Testimonials: React.FC = () => {
+  const { t } = useTranslation();
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [index, setIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,10 +47,10 @@ const Testimonials: React.FC = () => {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <section id="faq">
+    <section id="testimonials">
       <SectionContainer
-        title="What They Say"
-        subtitle="testimonials"
+        title={t('testimonials.title')}
+        subtitle={t('testimonials.subtitle')}
         backgroundColor="bg-purple"
         textColor='text-white'
         subtitleColor='text-white'
@@ -84,7 +86,7 @@ const Testimonials: React.FC = () => {
                 ←
               </button>
               <button onClick={openModal} className="hover:bg-purple-800 focus:outline-none focus:ring focus:ring-purple-300 font-bold border-2 border-white text-white rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-              Add Review
+              {t('testimonials.add')}
             </button>
               <button onClick={nextReview} className="text-2xl bg-purple-700 hover:bg-purple-800 rounded-full p-2 mx-1">
                 →

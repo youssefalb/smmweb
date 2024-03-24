@@ -1,8 +1,9 @@
 // ReviewForm.tsx
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import { db, storage } from '../firebase-config'; // Adjust this path according to your Firebase config file
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+import { useTranslation } from 'react-i18next';
 
 type ReviewFormProps = {
     isOpen: boolean;
@@ -10,11 +11,21 @@ type ReviewFormProps = {
 };
 
 const ReviewForm: React.FC<ReviewFormProps> = ({ isOpen, closeModal }) => {
+    const { t } = useTranslation();
     const [name, setName] = useState('');
     const [website, setWebsite] = useState(''); // Changed from 'position' to 'website'
     const [content, setContent] = useState('');
     const [email, setEmail] = useState('');
     const [image, setImage] = useState<File | null>(null);
+
+// Use useEffect to handle the body's overflow style based on modal open state
+useEffect(() => {
+  if (isOpen) {
+      document.body.style.overflow = 'hidden';
+  } else {
+      document.body.style.overflow = 'auto';
+  }
+}, [isOpen]); // Dependency array ensures effect runs only when isOpen changes
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -84,11 +95,11 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ isOpen, closeModal }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="text-black fixed inset-0 bg-black bg-opacity-50 overflow-y-auto h-full w-full">
+        <div className="text-black fixed inset-0 bg-black bg-opacity-50 overflow-y-auto h-full w-full z-50">
             <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
                 <form onSubmit={handleSubmit} className="space-y-4">
-                    <h2 className="text-lg font-bold mb-4">Add a Review</h2>
-                    <label className="block">Name*</label>
+                    <h2 className="text-lg font-bold mb-4">{t('testimonials.add')}</h2>
+                    <label className="block">{t('testimonials.name')}</label>
                     <input
                         type="text"
                         value={name}
@@ -96,7 +107,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ isOpen, closeModal }) => {
                         className="w-full p-2 border rounded"
                         required
                     />
-                    <label className="block">Website*</label>
+                    <label className="block">{t('testimonials.website')}</label>
                     <input
                         type="url"
                         value={website}
@@ -104,7 +115,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ isOpen, closeModal }) => {
                         className="w-full p-2 border rounded"
                         required
                     />
-                    <label className="block">Content*</label>
+                    <label className="block">{t('testimonials.testimonial')}</label>
                     <textarea
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
@@ -118,7 +129,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ isOpen, closeModal }) => {
                         onChange={(e) => setEmail(e.target.value)}
                         className="w-full p-2 border rounded"
                     /> */}
-                    <label className="block">Image</label>
+                    <label className="block">{t('testimonials.image')}</label>
                     <input
                         type="file"
                         onChange={handleImageChange}
@@ -126,7 +137,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ isOpen, closeModal }) => {
                     />
                     <div className="text-right">
                         <button type="submit" className="bg-purple text-white px-4 py-2 rounded hover:bg-blue-700">
-                            Submit
+                        {t('testimonials.add')}
                         </button>
                     </div>
                 </form>

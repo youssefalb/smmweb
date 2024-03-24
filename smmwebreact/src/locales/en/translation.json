@@ -6,7 +6,8 @@
         "faq": "FAQ",
         "pricing": "Pricing",
         "about": "About Us",
-        "freeConsultation": "Free Consultation"
+        "freeConsultation": "Free Consultation",
+        "testimonials": "Testimonials"
     },
     "hero": {
         "titlePartOne": "Your Company on the",
@@ -130,12 +131,12 @@
         "title": "Selected Projects",
         "projects": {
             "first": {
-                "name": "Private Portfolio Website",
+                "name": "Charity Organization Website",
                 "description": "The Business Card Website is the perfect solution for small businesses and freelancers wanting to establish an online presence with key information about their activities.",
                 "buttonText": "Go to Website"
             },
             "second": {
-                "name": "Company Website",
+                "name": "Medical Clinic Website",
                 "description": "The Company Website is a solution for various industries such as healthcare, accounting, or law, enabling effective presentation of services and strengthening the company's image online.",
                 "buttonText": "Go to Website"
             }
@@ -170,6 +171,15 @@
         "privacyPolicyTwo": "Privacy Policy",
         "sendButton": "Send Message"
     },
+    "testimonials": {
+        "subtitle": "testimonials",
+        "title": "What They Say",
+        "add": "Add Review",
+        "name": "Your Name",
+        "website": "Your Website Link",
+        "testimonial": "Review (Preferably in Polish)",
+        "image": "Add Picture of You"
+    },
     "footer": {
         "newsletter": {
             "title": "Sign up for our newsletter",
@@ -187,7 +197,8 @@
             "portfolio": "Portfolio",
             "about": "About Us",
             "prices": "Prices",
-            "contact": "Contact"
+            "contact": "Contact",
+            "testimonials": "Testimonials"
         }
     }
 }
