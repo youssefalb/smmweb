@@ -14,6 +14,7 @@ import Pricing from './components/Pricing'
 import Motto from './components/Motto'
 import FeaturesSection from './components/FeaturesSection';
 import BestWorkSection from './components/BestWorkSection';
+import Testimonials from './components/Testimonials';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <FeaturesSection />
       <FaqSection />
       <ConsultationSection />
+      <Testimonials />
       <BestWorkSection />
       <TeamSection />
       <Motto />

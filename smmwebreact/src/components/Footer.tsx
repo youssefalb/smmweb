@@ -64,7 +64,6 @@ const Footer = () => {
                         <li><a href="#faq" className="text-gray-400 hover:text-purple">{t('footer.menu.faq')}</a></li>
                         <li><a href="#portfolio" className="text-gray-400 hover:text-purple">{t('footer.menu.portfolio')}</a></li>
                         <li><a href="#aboutus" className="text-gray-400 hover:text-purple">{t('footer.menu.about')}</a></li>
-                        <li><a href="#pricing" className="text-gray-400 hover:text-purple">{t('footer.menu.prices')}</a></li>
                         <li><a href="#contact" className="text-gray-400 hover:text-purple">{t('footer.menu.contact')}</a></li>
                     </ul>
                     {/* Social Media Icons */}
