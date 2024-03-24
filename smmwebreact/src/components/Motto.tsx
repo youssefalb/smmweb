@@ -73,7 +73,7 @@ const CustomSection: React.FC = () => {
                 {/* Third Row */}
                 <div className="flex md:flex-row items-center space-y-2 space-x-2 md:space-y-0 md:space-x-4"> {/* Adjust layout and spacing */}
                     <span ref={(el) => addToRefs(el!, 'left')} className="text-md md:text-4xl text-center">{t('mission.part5')}</span> {/* Adjust font size */}
-                    <div className="bg-green-500 rounded-3xl w-14 md:w-32 h-6 md:h-10"></div> {/* Adjust rectangle size */}
+                    <div className="bg-green rounded-3xl w-14 md:w-32 h-6 md:h-10"></div> {/* Adjust rectangle size */}
                     <span ref={(el) => addToRefs(el!, 'right')} className="text-md md:text-4xl text-center">{t('mission.part6')}</span> {/* Adjust font size */}
                 </div>            </div>
         </SectionContainer>

@@ -47,7 +47,7 @@ const ConsultationSection = () => {
 
     return (
         <div ref={sectionRef} className="flex min-h-52 items-center justify-center bg-white relative px-6 py-32">
-            <div className="flex items-stretch bg-purple max-w-6xl rounded-2xl relative overflow-hidden">
+            <div className="flex items-stretch bg-green max-w-6xl rounded-2xl relative overflow-hidden">
                 <div className="hidden md:block self-stretch">
                     <img
                         src="/vector_white.png"
