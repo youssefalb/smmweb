@@ -45,7 +45,7 @@ const TeamSection = () => {
     }, []);
 
     return (
-        <section id="aboutus">
+        <section id="aboutus" className='overflow-x-hidden'>
             <SectionContainer
                 title={t('teamSection.title')}
                 subtitle={t('teamSection.subtitle')}

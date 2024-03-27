@@ -85,7 +85,7 @@ export default function Navbar() {
     };
 
     return (
-        <header className="fixed top-0 z-50 bg-white p-4 w-full border-b">
+        <header className="fixed top-0 z-50 bg-white p-4 w-full border-b  overflow-x-hidden">
             <div className="max-w-6xl mx-auto flex justify-between items-center">
                 {/* Logo section */}
                 <div className="flex items-center">

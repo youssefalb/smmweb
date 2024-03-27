@@ -85,9 +85,9 @@ const Services: React.FC = () => {
         });
     }, [t]);
 
-    
+
     return (
-        <section id="services">
+        <section id="services" className='overflow-x-hidden'>
             <div className="bg-white py-20 mb-20">
                 <div className="text-center">
                     <p ref={subtitleRef} className="background-text__item uppercase text-sm text-gray-500 mb-2">{t('services.subtitle')}</p>

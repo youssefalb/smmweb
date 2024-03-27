@@ -47,7 +47,7 @@ const CooperationPlan = () => {
 
 
     return (
-        <section id="process">
+        <section id="process" className='overflow-x-hidden'>
             <SectionContainer
                 title={t('cooperationPlan.title')}
                 subtitle={t('cooperationPlan.subtitle')}

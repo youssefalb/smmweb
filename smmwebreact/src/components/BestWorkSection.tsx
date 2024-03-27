@@ -18,7 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageUrl,
 
     return (
         <section id="portfolio">
-            <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg flex flex-col items-center text-left">
+            <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg flex flex-col items-center text-left overflow-x-hidden">
                 <div className="w-full bg-cover h-48" style={{ backgroundImage: `url(${imageUrl})` }}></div>
                 <div className="flex-1 p-6">
                     <h3 className="font-bold text-xl mb-2">{title}</h3>

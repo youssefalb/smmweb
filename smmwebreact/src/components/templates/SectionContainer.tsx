@@ -47,7 +47,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
     }, [subtitle]);
 
     return (
-        <div className={`${backgroundColor} py-20`}>
+        <div className={`${backgroundColor} py-20  overflow-x-hidden`}>
             <div className="text-center">
                 {subtitle && (
                     <p ref={subtitleRef} className={`uppercase text-sm mb-2 ${subtitleColor}`}>

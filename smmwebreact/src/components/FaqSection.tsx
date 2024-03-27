@@ -52,7 +52,7 @@ const FaqSection: React.FC = () => {
     }, [faqs]); // Dependency array
 
     return (
-        <section id="faq">
+        <section id="faq" className='overflow-x-hidden'>
             <SectionContainer
                 title={t('faq.title')}
                 subtitle={t('faq.subtitle')}

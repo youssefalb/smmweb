@@ -44,14 +44,14 @@ const ContactForm = () => {
     };
 
     return (
-        <section id="contact">
+        <section id="contact" className='overflow-x-hidden'>
             <SectionContainer
                 title={t('contact.title')}
                 subtitle={t('contact.subtitle')}
             >
                 <div className="bg-white p-12 rounded-2xl m-6">
                     <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('contact.header')}</h2>
-                    
+
                     <form ref={form} onSubmit={sendEmail} className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div> {/* First column for name, email, policy, and button */}
                             <p className="text-gray-600 mb-8">{t('contact.description')}</p>
@@ -74,15 +74,15 @@ const ContactForm = () => {
                                 />
                             </div>
                             <div className="flex items-center mb-4">
-                                <input 
-                                    type="checkbox" 
-                                    className="form-checkbox"  
-                                    checked={policyChecked} 
-                                    onChange={(e) => setPolicyChecked(e.target.checked)} 
+                                <input
+                                    type="checkbox"
+                                    className="form-checkbox"
+                                    checked={policyChecked}
+                                    onChange={(e) => setPolicyChecked(e.target.checked)}
                                 />
                                 <span className="ml-2">{t('contact.privacyPolicyOne')}</span>
-                                <button 
-                                    type="button" 
+                                <button
+                                    type="button"
                                     className="ml-1 text-purple-600 underline focus:outline-none"
                                     onClick={togglePolicyPopup}
                                 >

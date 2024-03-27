@@ -47,7 +47,7 @@ const Testimonials: React.FC = () => {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <section id="testimonials">
+    <section id="testimonials" className='overflow-x-hidden'>
       <SectionContainer
         title={t('testimonials.title')}
         subtitle={t('testimonials.subtitle')}

@@ -47,10 +47,16 @@ html {
     margin-right: 10px; 
 }
 
-
-html, body {
-    overflow-x: hidden;
+section {
+  overflow-x: hidden;
 }
+
+ body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 
 .nav-link::before {
     content: '';

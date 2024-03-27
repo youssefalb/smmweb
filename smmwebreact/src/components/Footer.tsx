@@ -37,7 +37,7 @@ const Footer = () => {
     }, []);
 
     return (
-        <footer className="bg-gray-900 text-white p-10 rounded-t-3xl">
+        <footer className="bg-gray-900 text-white p-10 rounded-t-3xl  overflow-x-hidden">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-12 gap-4">
                 <div ref={newsletterRef} className="">
                     <h3 className="font-bold text-lg mb-2">{t('footer.newsletter.title')}</h3>
