@@ -18,7 +18,7 @@
         "websiteOffer": "Strona WWW już od",
         "price": "990zł",
         "codeNote": "z kodem #webokraft",
-        "helpNote": "Branżom pomagamy"
+        "helpNote": "Stworzonych stron"
     },
     "services": {
         "subtitle": "NASZE USŁUGI",
@@ -29,11 +29,11 @@
         },
         "webDesign": {
             "title": "Projektowanie Stron Internetowych",
-            "description": "Tworzenie strony internetowej z zachwycającą grafiką i doświadczeniem użytkownika."
+            "description": "Tworzenie strony internetowej z zachwycającą grafiką i niesamowitymi wrażeniami z użytkowania."
         },
         "seoOptimization": {
             "title": "SEO Optymalizacja",
-            "description": "Zwiększ widoczność i przyciągnij organiczny ruch dzięki naszym technikom SEO."
+            "description": "Zwiększ widoczność i przyciągnij ruch dzięki naszym technikom SEO."
         }
     },
     "cooperationPlan": {
@@ -42,19 +42,19 @@
         "steps": {
             "interview": {
                 "title": "Wywiad",
-                "description": "Przeprowadzamy wywiad, aby dobrze poznać Twoje potrzeby oraz ustalić priorytety."
+                "description": "Przeprowadzimy wywiad, aby dobrze poznać Twoje potrzeby oraz ustalić priorytety."
             },
             "design": {
                 "title": "Projekt",
-                "description": "Na podstawie zebranych wymagań tworzymy projekt graficzny Twojej strony internetowej."
+                "description": "Na podstawie zebranych wymagań utworzymy projekt graficzny Twojej strony internetowej."
             },
             "implementation": {
                 "title": "Wykonanie",
-                "description": "Nasi webmasterzy łączą grafikę i treści w całość oraz dbają, by strona wyświetlała się dobrze na każdym urządzeniu."
+                "description": "Nasi webmasterzy połączą grafikę i treści w całość oraz zadbają, by strona wyświetlała się poprawnie na każdym urządzeniu."
             },
             "acceptance": {
                 "title": "Akceptacja i Wdrożenie",
-                "description": "Jeszcze przed publikacją strony w sieci przekazujemy Ci ostateczny projekt do wglądu i akceptacji."
+                "description": "Jeszcze przed publikacją strony w sieci przekażemy Ci ostateczny projekt do wglądu i akceptacji."
             }
         }
     },
@@ -63,7 +63,7 @@
         "title": "Co w Zestawie?",
         "graphicDesign": {
             "title": "Projekt Graficzny",
-            "description": "Profesjonalny projekt graficzny strony dostosowany do indywidualnych potrzeb klienta"
+            "description": "Profesjonalny projekt graficzny strony dostosowany do indywidualnych potrzeb klienta."
         },
         "mobileVersion": {
             "title": "Wersja Mobilna",
