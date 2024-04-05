@@ -2,12 +2,16 @@ import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useAuth } from '../AuthContext'; // Adjust the path as necessary
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
     const { t } = useTranslation();
     const newsletterRef = useRef(null);
     const aboutRef = useRef(null);
     const menuRef = useRef(null);
+    const { login, signup, logout, currentUser } = useAuth(); // Destructure the needed functions and state
+    const navigate = useNavigate();
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -65,6 +69,7 @@ const Footer = () => {
                         <li><a href="#portfolio" className="text-gray-400 hover:text-purple">{t('footer.menu.portfolio')}</a></li>
                         <li><a href="#aboutus" className="text-gray-400 hover:text-purple">{t('footer.menu.about')}</a></li>
                         <li><a href="#contact" className="text-gray-400 hover:text-purple">{t('footer.menu.contact')}</a></li>
+                        {/* <a className="text-gray-400 hover:text-purple" onClick={() => navigate('/login') }>Login</a> */}
                     </ul>
                     {/* Social Media Icons */}
                     {/* <div className="flex justify-center lg:justify-start mt-8 lg:mt-0 ml-24">
