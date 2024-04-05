@@ -11,6 +11,5 @@ const ADMIN_EMAILS: string[] = [
 
 // Function to check if a user is an admin
 export const isAdminUser = (user: User | null): boolean => {
-    return true;
-    // return user !== null && ADMIN_EMAILS.includes(user.email ?? '');
+    return user !== null && ADMIN_EMAILS.includes(user.email ?? '');
 };

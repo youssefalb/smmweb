@@ -18,6 +18,8 @@ import Testimonials from './components/Testimonials';
 import { AuthProvider } from './AuthContext';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
+import BlogsSection from './components/BlogsSection';
+import AddOrEditBlog from './AddOrEditBlog';
 
 function App() {
   return (
@@ -36,6 +38,7 @@ function App() {
                 <ConsultationSection />
                 <Testimonials />
                 <BestWorkSection />
+                {/* <BlogsSection /> */}
                 <TeamSection />
                 <Motto />
                 <ContactForm />
@@ -43,6 +46,10 @@ function App() {
             } />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+
+            {/* <Route path="/blog/:id" element={<BlogDetail />} /> */}
+            <Route path="/add-blog-post" element={<AddOrEditBlog />} />
+            <Route path="/edit-blog-post/:postId" element={<AddOrEditBlog />} />
 
           </Routes>
 
