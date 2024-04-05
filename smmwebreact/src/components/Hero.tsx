@@ -59,10 +59,10 @@ function PricingSection() {
                         <p className="text-base font-light">{t('hero.codeNote')}</p>
                     </div>
 
-                    <div className="text-center md:text-left mt-4 md:mt-0">
+                    {/* <div className="text-center md:text-left mt-4 md:mt-0">
                         <p className="text-5xl font-bold">14+</p>
                         <p className="text-base font-light">{t('hero.helpNote')}</p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
