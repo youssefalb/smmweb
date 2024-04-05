@@ -12,12 +12,12 @@
     "hero": {
         "titlePartOne": "Twoja Firma w",
         "titlePartTwo": "Internecie!",
-        "description": "Umożliwiamy firmom korzystanie z innowacyjnych rozwiązań cyfrowych, które tworzą trwałe wrażenia. Podnieś swoją markę razem z nami!",
+        "description": "Tworzymy strony na zamówienie, gwarantując najlepsze ceny i terminy. Ożywiamy też Twoje media społecznościowe!",
         "contactButton": "Skontaktuj Się z Nami",
         "servicesButton": "Usługi",
         "websiteOffer": "Lub po prostu zadzwoń do nas",
-"price": "571 074 097",
-"codeNote": "aby szybko uzyskać konsultację",
+        "price": "571 074 097",
+        "codeNote": "aby szybko uzyskać konsultację",
         "helpNote": "Stworzonych stron"
     },
     "services": {
