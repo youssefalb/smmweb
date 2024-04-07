@@ -55,7 +55,9 @@ function PricingSection() {
                 <div className="flex flex-col md:flex-row justify-center md:justify-start items-center md:space-x-10 mt-2">
 
                     <div className="text-center md:text-left">
-                        <p className="text-5xl font-bold">{t('hero.price')}</p>
+                        <a href={`tel:${t('hero.price')}`} className="text-5xl font-bold hover:text-purple hover:underline">
+                            <p>{t('hero.price')}</p>
+                        </a>
                         <p className="text-base font-light">{t('hero.codeNote')}</p>
                     </div>
 
