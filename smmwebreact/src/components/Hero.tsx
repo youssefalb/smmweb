@@ -23,16 +23,16 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <section id="hero" className="bg-gray-100 pt-20 pb-20 px-8 sm:px-6 lg:px-8 overflow-x-hidden">
+        <section id="hero" className="bg-gray-100 pt-20 pb-7 px-7 sm:px-6 lg:px-8 overflow-x-hidden">
             <div className="max-w-6xl h-[90vh] mx-auto flex flex-col lg:flex-row justify-between items-center">
                 <div className="lg:flex-1" ref={textRef}>
                     <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-6">{t('hero.titlePartOne')} <span className="text-purple">{t('hero.titlePartTwo')}</span></h1>
                     <p className="text-lg text-black mb-4">
                         {t('hero.description')}
                     </p>
-                    <div className="flex justify-center md:justify-start space-x-4 mt-7">
-                        <a href="#contact" className="bg-black text-white text-md font-medium px-5 py-2 rounded-full transition duration-300 ease-in-out hover:bg-gray-700">{t('hero.contactButton')}</a>
-                        <a href="#services" className="text-md font-medium px-5 py-2 underline decoration-black decoration-2 underline-offset-4 hover:text-gray-600">{t('hero.servicesButton')}</a>
+                    <div className="flex justify-start space-x-4 mt-7">
+                        <a href="#contact" className="rounded-lg bg-black text-white text-md font-medium px-5 py-2 transition duration-300 ease-in-out hover:bg-gray-700">{t('hero.contactButton')}</a>
+                        <a href="#services" className="rounded-lg text-md font-medium px-5 py-2 underline decoration-black decoration-2 underline-offset-4 hover:text-gray-600">{t('hero.servicesButton')}</a>
                     </div>
                     <PricingSection />
                 </div>
