@@ -6,7 +6,7 @@ import { useAuth } from '../AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { isAdminUser } from '../utils/AuthUtils';
 import { useTranslation } from 'react-i18next';
-
+import CustomSlider from './CustomSlider';
 // Define the structure of your blog post data
 interface BlogPost {
     id: string;
@@ -53,9 +53,13 @@ const BlogsSection: React.FC = () => {
                     </button>
                 )}
             </div>
-            {blogPosts.map((post) => (
+            <CustomSlider>
+
+                {blogPosts.map((post) => (
                     <BlogCard key={post.id} {...post} onDelete={() => handleDeleteItem(post.id)} />
                 ))}
+
+            </CustomSlider>
         </section>
     );
 };

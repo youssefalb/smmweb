@@ -20,6 +20,7 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import BlogsSection from './components/BlogsSection';
 import AddOrEditBlog from './AddOrEditBlog';
+import BlogDetail from './components/BlogDetail';
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
                 <ConsultationSection />
                 <Testimonials />
                 <BestWorkSection />
-                {/* <BlogsSection /> */}
+                <BlogsSection />
                 <TeamSection />
                 <Motto />
                 <ContactForm />
@@ -50,6 +51,7 @@ function App() {
             {/* <Route path="/blog/:id" element={<BlogDetail />} /> */}
             <Route path="/add-blog-post" element={<AddOrEditBlog />} />
             <Route path="/edit-blog-post/:postId" element={<AddOrEditBlog />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
 
           </Routes>
 

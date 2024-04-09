@@ -85,7 +85,7 @@ const AddBlogPost: React.FC = () => {
                 await setDoc(newPostRef, postData);
                 alert('Blog post added successfully!');
             }
-            navigate('/'); // Navigate to blog list or dashboard after submission
+            navigate('/'); 
         } catch (err) {
             console.error(err);
             alert('Failed to save blog post');

@@ -33,12 +33,13 @@ const Footer = () => {
                     scrollTrigger: {
                         trigger: ref,
                         start: "top bottom+=50",
-                        toggleActions: "play none none none",
+                        once: true, // Ensures the animation only triggers once
                     }
                 });
             }
         });
     }, []);
+
 
     return (
         <footer className="bg-gray-900 text-white p-10 rounded-t-3xl  overflow-x-hidden">
