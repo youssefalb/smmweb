@@ -22,10 +22,7 @@ const CustomSection: React.FC = () => {
                     ease: 'power3.out',
                     scrollTrigger: {
                         ...trigger,
-                        onEnter: () => gsap.to(element, { autoAlpha: 1, x: 0 }),
-                        onLeave: () => gsap.set(element, { autoAlpha: 0, x }),
-                        onEnterBack: () => gsap.to(element, { autoAlpha: 1, x: 0 }),
-                        onLeaveBack: () => gsap.set(element, { autoAlpha: 0, x }),
+                        once: true,
                     },
                 });
         }
@@ -56,7 +53,7 @@ const CustomSection: React.FC = () => {
             subtitle={t('mission.subtitle')}
             backgroundColor="bg-white"
         >
-            <div className="flex flex-col items-center justify-center space-y-2 md:space-y-4 mb-20  overflow-x-hidden">
+            <div className="flex flex-col items-center justify-center space-y-2 md:space-y-4 mb-20">
                 {/* Example for one row, replicate for others */}
                 <div className="flex md:flex-row items-center space-y-2 space-x-2 md:space-y-0 md:space-x-4">
                     <span ref={(el) => addToRefs(el!, 'left')} className="text-md md:text-4xl text-center">{t('mission.part1')}</span>

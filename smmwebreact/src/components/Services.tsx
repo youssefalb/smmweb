@@ -50,40 +50,50 @@ const Services: React.FC = () => {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
+        // Cards animation
         const elements = [leftCardRef.current, middleCardRef.current, rightCardRef.current];
         elements.forEach((el, index) => {
-            gsap.fromTo(el, { autoAlpha: 0, x: index === 0 ? -200 : index === 2 ? 200 : 0 }, {
+            gsap.fromTo(el,
+                { autoAlpha: 0, x: index === 0 ? -200 : index === 2 ? 200 : 0 },
+                {
+                    duration: 1,
+                    autoAlpha: 1,
+                    x: 0,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top center+=100",
+                    },
+                });
+        });
+
+        // Subtitle animation
+        gsap.fromTo(subtitleRef.current,
+            { autoAlpha: 0, x: 500 },
+            {
                 duration: 1,
                 autoAlpha: 1,
                 x: 0,
                 scrollTrigger: {
-                    trigger: el,
-                    start: "top center+=100",
-                    toggleActions: "play pause play reverse",
-                },
+                    trigger: subtitleRef.current,
+                    start: "top 90%",
+                }
             });
-        });
 
-        // Animation for the subtitle coming from the right
-        ScrollTrigger.create({
-            trigger: subtitleRef.current,
-            start: "top 90%", // Adjust as needed
-            onEnter: () => gsap.fromTo(subtitleRef.current, { autoAlpha: 0, x: 500 }, { duration: 1, autoAlpha: 1, x: 0 }),
-            onLeave: () => gsap.to(subtitleRef.current, { autoAlpha: 0, x: 500, duration: 1 }),
-            onEnterBack: () => gsap.to(subtitleRef.current, { autoAlpha: 1, x: 0, duration: 1 }),
-            onLeaveBack: () => gsap.to(subtitleRef.current, { autoAlpha: 0, x: -500, duration: 1 }),
-        });
+        // Title animation
+        gsap.fromTo(titleRef.current,
+            { autoAlpha: 0, x: -500 },
+            {
+                duration: 1,
+                autoAlpha: 1,
+                x: 0,
+                scrollTrigger: {
+                    trigger: titleRef.current,
+                    start: "top 90%",
+                }
+            });
 
-        // Animation for the title coming from the left
-        ScrollTrigger.create({
-            trigger: titleRef.current,
-            start: "top 90%", // Adjust as needed
-            onEnter: () => gsap.fromTo(titleRef.current, { autoAlpha: 0, x: -500 }, { duration: 1, autoAlpha: 1, x: 0 }),
-            onLeave: () => gsap.to(titleRef.current, { autoAlpha: 0, x: -500, duration: 1 }),
-            onEnterBack: () => gsap.to(titleRef.current, { autoAlpha: 1, x: 0, duration: 1 }),
-            onLeaveBack: () => gsap.to(titleRef.current, { autoAlpha: 0, x: 500, duration: 1 }),
-        });
-    }, [t]);
+    }, []); // No dependencies, so this runs once at component mount
+
 
 
     return (

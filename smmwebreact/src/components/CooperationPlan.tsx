@@ -21,7 +21,6 @@ const CooperationPlan = () => {
                     start: "top center+=300",
                     end: "top center",
                     toggleActions: "play none play none",
-                    scrub: 1,
                 }
             })
                 .fromTo(gridItems,
@@ -35,7 +34,7 @@ const CooperationPlan = () => {
                     }
                 );
 
-            // Cleanup function
+
             return () => {
                 if (tl.scrollTrigger) {
                     tl.scrollTrigger.kill();
@@ -43,7 +42,7 @@ const CooperationPlan = () => {
                 tl.kill();
             };
         }
-    }, [t]);
+    }, []);
 
 
     return (

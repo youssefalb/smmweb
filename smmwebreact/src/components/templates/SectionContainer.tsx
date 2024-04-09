@@ -25,29 +25,26 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
     const subtitleRef = useRef<HTMLParagraphElement>(null);
 
     useEffect(() => {
-
+        // Animation for the subtitle
         ScrollTrigger.create({
             trigger: subtitleRef.current,
-            start: "top 90%", // Adjust as needed
+            start: "top 90%",
             onEnter: () => gsap.fromTo(subtitleRef.current, { autoAlpha: 0, x: -500 }, { duration: 1, autoAlpha: 1, x: 0 }),
-            onLeave: () => gsap.to(subtitleRef.current, { autoAlpha: 0, x: -500, duration: 1 }),
-            onEnterBack: () => gsap.to(subtitleRef.current, { autoAlpha: 1, x: 0, duration: 1 }),
-            onLeaveBack: () => gsap.to(subtitleRef.current, { autoAlpha: 0, x: 500, duration: 1 }),
+            once: true,
         });
 
-        // Animation for the title coming from the left
+        // Animation for the title
         ScrollTrigger.create({
             trigger: titleRef.current,
-            start: "top 90%", // Adjust as needed
+            start: "top 90%",
             onEnter: () => gsap.fromTo(titleRef.current, { autoAlpha: 0, x: 500 }, { duration: 1, autoAlpha: 1, x: 0 }),
-            onLeave: () => gsap.to(titleRef.current, { autoAlpha: 0, x: 500, duration: 1 }),
-            onEnterBack: () => gsap.to(titleRef.current, { autoAlpha: 1, x: 0, duration: 1 }),
-            onLeaveBack: () => gsap.to(titleRef.current, { autoAlpha: 0, x: -500, duration: 1 }),
+            once: true,
         });
     }, [subtitle]);
 
+
     return (
-        <div className={`${backgroundColor} py-20  overflow-x-hidden`}>
+        <div className={`${backgroundColor} py-20  overflow-x-hidden border-gray-950`}>
             <div className="text-center">
                 {subtitle && (
                     <p ref={subtitleRef} className={`uppercase text-sm mb-2 ${subtitleColor}`}>

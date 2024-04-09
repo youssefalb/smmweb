@@ -61,32 +61,33 @@ const FeaturesSection = () => {
             icon: '/szkolenie.svg',
         },
     ];
-
     useEffect(() => {
         if (featuresRef.current) {
+            // Convert feature section children to an array for animation
             const featureItems = Array.from(featuresRef.current.children);
 
+            // Initialize GSAP timeline with ScrollTrigger for a one-time animation
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: featuresRef.current,
-                    start: "top center+=200",
-                    end: "top center",
-                    toggleActions: "play none play none",
-                    scrub: 1,
+                    start: "top center+=200", // When the top of the features section is in the center of the viewport + 200px
+                    end: "top center", // End trigger point, can be adjusted or removed if not needed
+                    toggleActions: "play none none none", // Ensures animation plays once without resetting or reversing
+                    once: true, // Animation will only trigger once per page load
                 }
             })
                 .fromTo(featureItems,
-                    { y: 50, autoAlpha: 0 },
+                    { y: 50, autoAlpha: 0 }, // Starting animation state
                     {
-                        y: 0,
+                        y: 0, // Ending animation state
                         autoAlpha: 1,
                         duration: 2,
-                        stagger: 0.2,
-                        ease: "back.out(1.7)",
+                        stagger: 0.2, // Stagger the start of animations for each child
+                        ease: "back.out(1.7)", // Easing function for the animation
                     }
                 );
 
-            // Cleanup function
+            // Cleanup function to remove ScrollTrigger and timeline instances
             return () => {
                 if (tl.scrollTrigger) {
                     tl.scrollTrigger.kill();
@@ -94,7 +95,7 @@ const FeaturesSection = () => {
                 tl.kill();
             };
         }
-    }, [t]);
+    }, [t]); // Dependency array includes `t`, suggesting the effect should rerun if `t` changes
 
     return (
         <SectionContainer title={t('package.title')} subtitle={t('package.subtitle')} backgroundColor="bg-purple" textColor="text-white" subtitleColor="text-gray-200">
