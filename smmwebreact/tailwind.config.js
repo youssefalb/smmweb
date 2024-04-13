@@ -9,6 +9,11 @@ module.exports = {
         'black': '#222222',
         'green': '#55BB87', 
       },
+      lineClamp: {
+        1: '1',
+        2: '2',
+        // ... other values
+      },
        width: {
         '3/10': '30%',
         '7/10': '70%',
@@ -80,6 +85,8 @@ module.exports = {
     // Add Tailwind CSS plugins here, for example:
     // require('@tailwindcss/forms'),
     // require('@tailwindcss/typography'),
+    require('@tailwindcss/line-clamp'),
+
   ],
 };
 

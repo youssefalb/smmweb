@@ -38,25 +38,38 @@ const BlogCard: React.FC<BlogCardProps> = ({ id, image, title, description, date
         }
         return str;
     };
+    //        <div className="border border-gray-300 bg-white rounded-2xl flex flex-col items-center max-w-sm">
+
     return (
-        <div className="border border-gray-300 bg-white rounded-2xl p-4 flex flex-col items-center max-w-sm">
-            <div className="mb-4">
-                <img src={image} alt={title} className="object-cover h-48 w-60 rounded-t-lg" />
-            </div>
-            <h5 className="text-lg font-bold">{truncateString(title, 28)}</h5>
-            <p className="text-gray-600 mt-2">{description}</p>
-            <p className="text-gray-500 text-sm mt-2">{datePublished}</p>
-            <Link to={`/blog/${id}`} className="lg:block text-white bg-purple px-4 py-2 rounded-md m-6 hover:bg-gray-500">
-                {t('blogs.readMore')}
-            </Link>
-            {isAdminUser(currentUser) && (
-                <div className="space-x-2">
-                    <button onClick={handleEdit} className="text-white bg-black px-3 py-2 rounded-md hover:bg-blue-700">{t('blogs.edit')}</button>
-                    <button onClick={handleDelete} className="text-white bg-red-500 px-3 py-2 rounded-md hover:bg-red-700">{t('blogs.delete')}</button>
+        <div className="bg-white rounded-lg overflow-hidden shadow-lg border border-gray-300 flex flex-col max-w-sm relative">
+            <Link to={`/blog/${id}`} className="text-black hover:text-purple relative">
+                <div className="relative">
+                    <img src={image} alt="Blog Post" className="object-cover w-full rounded-t-lg" style={{ height: '200px' }} />
+                    <span className="absolute bottom-[-0.625rem] ml-4 bg-purple text-white text-xs font-semibold px-4 py-1 rounded-md">
+                        TEST
+                    </span>
                 </div>
-            )}
+                <div className="p-4">
+                    <h4 className="text-lg font-bold mt-2 line-clamp-2 overflow-hidden" title={title}>
+                        {title}
+                    </h4>
+                    <p className="text-xs font-medium text-gray-500">by Youssef</p>
+                </div>
+            </Link>
+
+            <div className="absolute top-0 rounded-lg right-0 m-4 bg-white p-3 shadow-2xl">
+                <div className="text-center">
+                    <span className="block text-black text-xs font-bold">
+                        AUG
+                    </span>
+                    <span className="block text-purple text-3xl font-semibold">
+                        01
+                    </span>
+                </div>
+            </div>
         </div>
     );
 };
+
 
 export default BlogCard;

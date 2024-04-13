@@ -53,13 +53,13 @@ const BlogsSection: React.FC = () => {
                     </button>
                 )}
             </div>
-            <CustomSlider>
+            <div>
 
                 {blogPosts.map((post) => (
                     <BlogCard key={post.id} {...post} onDelete={() => handleDeleteItem(post.id)} />
                 ))}
 
-            </CustomSlider>
+            </div>
         </section>
     );
 };
