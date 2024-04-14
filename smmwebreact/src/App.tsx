@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import NavBar from './components/Navbar';
 import Hero from './components/Hero'
 import CooperationPlan from './components/CooperationPlan'
@@ -21,6 +20,7 @@ import RegisterPage from './components/RegisterPage';
 import BlogsSection from './components/BlogsSection';
 import AddOrEditBlog from './AddOrEditBlog';
 import BlogDetail from './components/BlogDetail';
+import BlogsPage from './BlogsPage';
 
 function App() {
   return (
@@ -47,6 +47,7 @@ function App() {
             } />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/blogs" element={<BlogsPage />} />
 
             {/* <Route path="/blog/:id" element={<BlogDetail />} /> */}
             <Route path="/add-blog-post" element={<AddOrEditBlog />} />

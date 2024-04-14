@@ -41,7 +41,7 @@ const BlogsSection: React.FC = () => {
     };
 
     return (
-        <section id="news" className="p-6 bg-gray-100 pb-20 mx-auto">
+        <section id="news" className="p-6 bg-gray-100 pb-30 mx-auto">
             <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:justify-between items-center mb-6 p-10">
                 <h2 className="text-3xl font-bold sm:mb-0 mb-4 text-center sm:text-center flex-1">{t('blogs.title')}</h2>
                 {isAdminUser(currentUser) && (

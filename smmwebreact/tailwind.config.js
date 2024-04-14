@@ -9,6 +9,7 @@ module.exports = {
         'black': '#222222',
         'green': '#55BB87', 
       },
+
       lineClamp: {
         1: '1',
         2: '2',
