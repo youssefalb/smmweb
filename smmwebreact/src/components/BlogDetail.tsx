@@ -37,13 +37,14 @@ const BlogDetail: React.FC = () => {
                         image: data.image,
                         title: data.title,
                         content: data.content,
-                        publishDate: data.publishDate.toDate() // Assuming publishDate is a Timestamp
+                        publishDate: new Date(data.publishDate) // Converts string or number to Date object
                     });
                 } else {
                     console.log("No such document!");
                 }
             }
         };
+
 
         fetchBlogPost();
     }, [id]);

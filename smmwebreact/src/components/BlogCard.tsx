@@ -10,12 +10,14 @@ interface BlogCardProps {
     id: string;
     image: string;
     title: string;
-    description: string;
-    datePublished: string;
+    author: string;
+    content: string;
+    publishDate: string;
+    tag: string;
     onDelete: () => void;
 }
 
-const BlogCard: React.FC<BlogCardProps> = ({ id, image, title, description, datePublished, onDelete }) => {
+const BlogCard: React.FC<BlogCardProps> = ({ id, image, title, content, publishDate, tag, author, onDelete }) => {
     const { currentUser } = useAuth();
     const navigate = useNavigate();
     const { t } = useTranslation();
@@ -40,30 +42,40 @@ const BlogCard: React.FC<BlogCardProps> = ({ id, image, title, description, date
     };
     //        <div className="border border-gray-300 bg-white rounded-2xl flex flex-col items-center max-w-sm">
 
+
+    const formatDate = (dateString: string) => {
+        const date = new Date(dateString);
+        return {
+            month: date.toLocaleDateString('en-US', { month: 'short' }).toUpperCase(),
+            day: date.getDate().toString()
+        };
+    };
+
+    const dateParts = formatDate(publishDate);
     return (
         <div className="bg-white rounded-lg overflow-hidden shadow-lg border border-gray-300 flex flex-col max-w-sm relative">
             <Link to={`/blog/${id}`} className="text-black hover:text-purple relative">
                 <div className="relative">
                     <img src={image} alt="Blog Post" className="object-cover w-full rounded-t-lg" style={{ height: '200px' }} />
                     <span className="absolute bottom-[-0.625rem] ml-4 bg-purple text-white text-xs font-semibold px-4 py-1 rounded-md">
-                        TEST
+                        {tag}
                     </span>
                 </div>
                 <div className="p-4">
                     <h4 className="text-lg font-bold mt-2 line-clamp-2 overflow-hidden" title={title}>
                         {title}
                     </h4>
-                    <p className="text-xs font-medium text-gray-500">by Youssef</p>
+                    <p className="text-xs font-medium text-gray-500">by {author}</p>
                 </div>
             </Link>
 
             <div className="absolute top-0 rounded-lg right-0 m-4 bg-white p-3 shadow-2xl">
                 <div className="text-center">
                     <span className="block text-black text-xs font-bold">
-                        AUG
+                        {dateParts.month}
                     </span>
                     <span className="block text-purple text-3xl font-semibold">
-                        01
+                        {dateParts.day}
                     </span>
                 </div>
             </div>

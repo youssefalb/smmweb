@@ -10,9 +10,12 @@ interface BlogPost {
     id: string;
     image: string;
     title: string;
-    description: string;
-    datePublished: string;
+    publishDate: string;
+    author: string;
+    content: string;
+    tag: string;
 }
+
 
 
 interface PaginationProps {
@@ -83,29 +86,39 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, pagina
 const BlogsPage: React.FC = () => {
     const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+    const [latestPosts, setLatestPosts] = useState<BlogPost[]>([]);
 
     const [searchQuery, setSearchQuery] = useState('');
 
 
     const fetchBlogPosts = async () => {
         const querySnapshot = await getDocs(collection(db, "blogPosts"));
-        const allPosts: BlogPost[] = querySnapshot.docs.map((doc) => ({
+        let allPosts: BlogPost[] = querySnapshot.docs.map((doc) => ({
             ...doc.data() as BlogPost,
             id: doc.id,
         }));
 
-        // Filter posts if there is a search query
-        const filteredPosts = searchQuery
-            ? allPosts.filter(post =>
-                post.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                post.description?.toLowerCase().includes(searchQuery.toLowerCase())
-                // Ensure all fields exist and are strings; if not, they'll be ignored in the filter
-                // || post.author?.toLowerCase().includes(searchQuery.toLowerCase())
-            )
-            : allPosts;
+        setLatestPosts(allPosts.slice(0, 2));
 
-        setBlogPosts(filteredPosts);
+
+        // Filter by search query if it exists
+        if (searchQuery) {
+            const searchLower = searchQuery.toLowerCase();
+            allPosts = allPosts.filter(post =>
+                post.title?.toLowerCase().includes(searchLower) ||
+                post.author?.toLowerCase().includes(searchLower)
+
+            );
+        }
+
+        // Further filter by selected category if it exists
+        if (selectedCategory) {
+            allPosts = allPosts.filter(post => post.tag?.toLowerCase() === selectedCategory.toLowerCase());
+        }
+
+        setBlogPosts(allPosts);
     };
+
 
 
 
@@ -124,13 +137,18 @@ const BlogsPage: React.FC = () => {
 
     useEffect(() => {
         fetchBlogPosts();
-    }, [searchQuery]);
+    }, [searchQuery, selectedCategory]);
 
     const handleDeleteItem = async (itemId: string) => {
         await deleteDoc(doc(db, "blogPosts", itemId));
         fetchBlogPosts();
     };
 
+
+    const handleCategorySelect = (category: string | null) => {
+        setSelectedCategory(category);
+        setCurrentPage(1); // Reset to first page
+    };
     const categories = ["Digital Marketing", "Web Design & Development", "SEO Optimization", "Graphic Design", "Content Creation", "Social Media Management", "Email Marketing Campaigns", "Mobile App Development", "E-Commerce"];
 
     return (
@@ -179,12 +197,17 @@ const BlogsPage: React.FC = () => {
                     <div className="bg-gray-100 p-4 rounded-lg shadow-xl mb-6 hidden lg:block">
                         <h2 className="font-bold mb-3">Categories</h2>
                         <ul>
+                            <li
+                                className={`text-gray-700 py-1 px-3 rounded-md cursor-pointer ${selectedCategory === null ? 'bg-purple text-white' : 'hover:bg-gray-200'}`}
+                                onClick={() => handleCategorySelect(null)}
+                            >
+                                All Categories
+                            </li>
                             {categories.map((category) => (
                                 <li
                                     key={category}
-                                    className={`text-gray-700 py-1 px-3 rounded-md cursor-pointer ${selectedCategory === category ? 'bg-purple text-white' : 'hover:bg-gray-200'
-                                        }`}
-                                    onClick={() => setSelectedCategory(category)}
+                                    className={`text-gray-700 py-1 px-3 rounded-md cursor-pointer ${selectedCategory === category ? 'bg-purple text-white' : 'hover:bg-gray-200'}`}
+                                    onClick={() => handleCategorySelect(category)}
                                 >
                                     {category}
                                 </li>
@@ -193,10 +216,14 @@ const BlogsPage: React.FC = () => {
                     </div>
 
                     {/* Latest Posts */}
-                    <div className="bg-white p-4 rounded-lg shadow-md mb-6 hidden lg:block">
+                    {/* Latest Posts */}
+                    <div className="bg-white p-4 rounded-lg shadow-md mb-6 hidden lg:block gap-y-4 space-y-8">
                         <h2 className="font-bold mb-3">Latest Posts</h2>
-                        {/* Render latest posts here */}
+                        {latestPosts.map(post => (
+                            <BlogCard key={post.id} {...post} onDelete={() => handleDeleteItem(post.id)} />
+                        ))}
                     </div>
+
                 </aside>
 
                 {/* Blog Posts Grid */}

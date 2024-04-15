@@ -12,8 +12,10 @@ interface BlogPost {
     id: string;
     image: string;
     title: string;
-    description: string;
-    datePublished: string;
+    publishDate: string;
+    author: string;
+    content: string;
+    tag: string;
 }
 
 const BlogsSection: React.FC = () => {
@@ -30,6 +32,8 @@ const BlogsSection: React.FC = () => {
         }));
         setBlogPosts(posts);
     };
+
+    
 
     useEffect(() => {
         fetchBlogPosts();
