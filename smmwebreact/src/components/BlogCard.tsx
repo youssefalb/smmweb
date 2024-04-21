@@ -63,13 +63,13 @@ const BlogCard: React.FC<BlogCardProps> = ({ id, image, title, content, publishD
                 </div>
                 <div className="p-4">
                     <h4 className="text-lg font-bold mt-2 line-clamp-2 overflow-hidden" title={title}>
-                        {title}
+                        {truncateString(title, 50)}
                     </h4>
                     <p className="text-xs font-medium text-gray-500">by {author}</p>
                 </div>
             </Link>
 
-            <div className="absolute top-0 rounded-lg right-0 m-4 bg-white p-3 shadow-2xl">
+            <div className="absolute top-0 right-0 m-4 bg-white p-3 shadow-lg rounded-lg">
                 <div className="text-center">
                     <span className="block text-black text-xs font-bold">
                         {dateParts.month}
@@ -79,9 +79,25 @@ const BlogCard: React.FC<BlogCardProps> = ({ id, image, title, content, publishD
                     </span>
                 </div>
             </div>
+
+            {isAdminUser(currentUser) && (
+                <div className="absolute top-0 left-0 m-4 space-y-2 z-10">
+                    <button
+                        className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded"
+                        onClick={handleDelete}
+                        title={t('blogCard.delete')}>
+                        {t('blogCard.delete')}
+                    </button>
+                    <button
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded"
+                        onClick={handleEdit}
+                        title={t('blogCard.edit')}>
+                        {t('blogCard.edit')}
+                    </button>
+                </div>
+            )}
         </div>
     );
 };
-
 
 export default BlogCard;

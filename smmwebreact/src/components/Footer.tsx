@@ -65,11 +65,11 @@ const Footer = () => {
                 <div ref={menuRef} className='mt-10 lg:mt-0 lg:ml-24'>
                     <h3 className="font-bold text-lg mb-2">Menu</h3>
                     <ul>
-                        <li><a href="#services" className="text-gray-400 hover:text-purple">{t('footer.menu.services')}</a></li>
-                        <li><a href="#faq" className="text-gray-400 hover:text-purple">{t('footer.menu.faq')}</a></li>
-                        <li><a href="#portfolio" className="text-gray-400 hover:text-purple">{t('footer.menu.portfolio')}</a></li>
-                        <li><a href="#aboutus" className="text-gray-400 hover:text-purple">{t('footer.menu.about')}</a></li>
-                        <li><a href="#contact" className="text-gray-400 hover:text-purple">{t('footer.menu.contact')}</a></li>
+                        <li><a href="/#services" className="text-gray-400 hover:text-purple">{t('footer.menu.services')}</a></li>
+                        <li><a href="/#faq" className="text-gray-400 hover:text-purple">{t('footer.menu.faq')}</a></li>
+                        <li><a href="/#portfolio" className="text-gray-400 hover:text-purple">{t('footer.menu.portfolio')}</a></li>
+                        <li><a href="/#aboutus" className="text-gray-400 hover:text-purple">{t('footer.menu.about')}</a></li>
+                        <li><a href="/#contact" className="text-gray-400 hover:text-purple">{t('footer.menu.contact')}</a></li>
                         {/* <a className="text-gray-400 hover:text-purple" onClick={() => navigate('/login') }>Login</a> */}
                     </ul>
                     {/* Social Media Icons */}
