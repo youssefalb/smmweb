@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import heroImage from '../assets/images/hero.svg';
 import gsap from 'gsap';
 import { useTranslation } from 'react-i18next';
+import {db} from '../firebase-config';
+import { collection, addDoc } from 'firebase/firestore';
 
 export default function HeroSection() {
     const { t } = useTranslation();
@@ -21,6 +23,8 @@ export default function HeroSection() {
             { x: 0, opacity: 1, duration: 1, ease: 'power3.out' }
         );
     }, []);
+
+    addDummyBlogPosts();
 
     return (
         <section id="hero" className="bg-gray-100 pt-20 pb-7 px-7 sm:px-6 lg:px-8 overflow-x-hidden">
@@ -43,6 +47,112 @@ export default function HeroSection() {
         </section>
     );
 }
+
+const addDummyBlogPosts = async () => {
+    const blogPosts = [
+        {
+            title: "How to fail at almost everything but be good at blowjob",
+            content: "This is the blog post content for Post 1.",
+            image: "https://firebasestorage.googleapis.com/v0/b/webokraft.appspot.com/o/blogImages%2Fc093f2ef-7c36-48be-9e9d-cf764c7055f0.webp?alt=media&token=b880f8f9-dd04-4c24-9364-bfdae2814300",
+            publishDate: new Date().toISOString(),
+            author: "Sexy Andy",
+            tag: "Technology"
+        },
+        {
+            title: "How to fail at almost everything but be good at blowjob",
+            content: "This is the blog post content for Post 1.",
+            image: "https://firebasestorage.googleapis.com/v0/b/webokraft.appspot.com/o/blogImages%2Fc093f2ef-7c36-48be-9e9d-cf764c7055f0.webp?alt=media&token=b880f8f9-dd04-4c24-9364-bfdae2814300",
+            publishDate: new Date().toISOString(),
+            author: "Sexy Andy",
+            tag: "Technology"
+        },
+        {
+            title: "How to fail at almost everything but be good at blowjob",
+            content: "This is the blog post content for Post 1.",
+            image: "https://firebasestorage.googleapis.com/v0/b/webokraft.appspot.com/o/blogImages%2Fc093f2ef-7c36-48be-9e9d-cf764c7055f0.webp?alt=media&token=b880f8f9-dd04-4c24-9364-bfdae2814300",
+            publishDate: new Date().toISOString(),
+            author: "Sexy Andy",
+            tag: "Technology"
+        },
+        {
+            title: "How to fail at almost everything but be good at blowjob",
+            content: "This is the blog post content for Post 1.",
+            image: "https://firebasestorage.googleapis.com/v0/b/webokraft.appspot.com/o/blogImages%2Fc093f2ef-7c36-48be-9e9d-cf764c7055f0.webp?alt=media&token=b880f8f9-dd04-4c24-9364-bfdae2814300",
+            publishDate: new Date().toISOString(),
+            author: "Sexy Andy",
+            tag: "Technology"
+        },
+        {
+            title: "How to fail at almost everything but be good at blowjob",
+            content: "This is the blog post content for Post 1.",
+            image: "https://firebasestorage.googleapis.com/v0/b/webokraft.appspot.com/o/blogImages%2Fc093f2ef-7c36-48be-9e9d-cf764c7055f0.webp?alt=media&token=b880f8f9-dd04-4c24-9364-bfdae2814300",
+            publishDate: new Date().toISOString(),
+            author: "Sexy Andy",
+            tag: "Technology"
+        },
+        {
+            title: "How to fail at almost everything but be good at blowjob",
+            content: "This is the blog post content for Post 1.",
+            image: "https://firebasestorage.googleapis.com/v0/b/webokraft.appspot.com/o/blogImages%2Fc093f2ef-7c36-48be-9e9d-cf764c7055f0.webp?alt=media&token=b880f8f9-dd04-4c24-9364-bfdae2814300",
+            publishDate: new Date().toISOString(),
+            author: "Sexy Andy",
+            tag: "Technology"
+        },
+        {
+            title: "How to fail at almost everything but be good at blowjob",
+            content: "This is the blog post content for Post 1.",
+            image: "https://firebasestorage.googleapis.com/v0/b/webokraft.appspot.com/o/blogImages%2Fc093f2ef-7c36-48be-9e9d-cf764c7055f0.webp?alt=media&token=b880f8f9-dd04-4c24-9364-bfdae2814300",
+            publishDate: new Date().toISOString(),
+            author: "Sexy Andy",
+            tag: "Technology"
+        },
+        {
+            title: "How to fail at almost everything but be good at blowjob",
+            content: "This is the blog post content for Post 1.",
+            image: "https://firebasestorage.googleapis.com/v0/b/webokraft.appspot.com/o/blogImages%2Fc093f2ef-7c36-48be-9e9d-cf764c7055f0.webp?alt=media&token=b880f8f9-dd04-4c24-9364-bfdae2814300",
+            publishDate: new Date().toISOString(),
+            author: "Sexy Andy",
+            tag: "Technology"
+        },
+        {
+            title: "How to fail at almost everything but be good at blowjob",
+            content: "This is the blog post content for Post 1.",
+            image: "https://firebasestorage.googleapis.com/v0/b/webokraft.appspot.com/o/blogImages%2Fc093f2ef-7c36-48be-9e9d-cf764c7055f0.webp?alt=media&token=b880f8f9-dd04-4c24-9364-bfdae2814300",
+            publishDate: new Date().toISOString(),
+            author: "Sexy Andy",
+            tag: "Technology"
+        },
+        {
+            title: "How to fail at almost everything but be good at blowjob",
+            content: "This is the blog post content for Post 1.",
+            image: "https://firebasestorage.googleapis.com/v0/b/webokraft.appspot.com/o/blogImages%2Fc093f2ef-7c36-48be-9e9d-cf764c7055f0.webp?alt=media&token=b880f8f9-dd04-4c24-9364-bfdae2814300",
+            publishDate: new Date().toISOString(),
+            author: "Sexy Andy",
+            tag: "Technology"
+        },
+        {
+            title: "How to fail at almost everything but be good at blowjob",
+            content: "This is the blog post content for Post 1.",
+            image: "https://firebasestorage.googleapis.com/v0/b/webokraft.appspot.com/o/blogImages%2Fc093f2ef-7c36-48be-9e9d-cf764c7055f0.webp?alt=media&token=b880f8f9-dd04-4c24-9364-bfdae2814300",
+            publishDate: new Date().toISOString(),
+            author: "Sexy Andy",
+            tag: "Technology"
+        },
+
+        // Add more blog posts here following the same structure
+    ];
+
+    const promises = blogPosts.map(async (post) => {
+        try {
+            const docRef = await addDoc(collection(db, "blogPosts"), post);
+            console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
+    });
+
+    await Promise.all(promises);
+};
 
 function PricingSection() {
     const { t } = useTranslation();
