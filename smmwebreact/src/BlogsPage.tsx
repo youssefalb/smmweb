@@ -156,7 +156,8 @@ const BlogsPage: React.FC = () => {
     return (
         <>
             {/* Header */}
-            <div className="bg-no-repeat bg-cover text-white text-left p-12 mt-16 max-w-7xl mx-auto" style={{ backgroundImage: `url(${backgroundImage})` }}>
+            <div className='bg-purple'>
+            <div className="bg-no-repeat bg-cover text-white text-left py-8 mt-16 max-w-6xl mx-auto" style={{ backgroundImage: `url(${backgroundImage})` }}>
                 <div className="container mx-auto max-w-6xl">
                     {/* Navigation Links */}
                     <div className="space-x-4">
@@ -173,14 +174,16 @@ const BlogsPage: React.FC = () => {
                     <p className="font-light">{t('blogs.blogSectionDescription')}</p>
                 </div>
             </div>
+            </div>
+            
 
             {/* Main Content */}
-            <div className="container mx-auto px-4 lg:px-8 py-8 lg:py-12 flex flex-col lg:flex-row max-w-7xl">
+            <div className="container mx-auto py-8 lg:py-12 flex flex-col lg:flex-row max-w-6xl">
                 {/* Sidebar: Search, Categories, and Latest Posts */}
-                <aside className="w-full lg:w-1/4 px-4 mb-8 lg:mb-0 lg:pr-8">
+                <aside className="w-full lg:w-1/4 px-4 mb-8 lg:mb-0">
                     {/* Search Bar */}
                     {/* Search Bar */}
-                    <div className="bg-green p-4 rounded-lg shadow-xl mb-6">
+                    <div className="bg-gray-100 p-4 rounded-xl mb-6">
                         <input
                             className="w-full p-2 rounded-md border border-gray-300"
                             placeholder={t('blogs.searchPlaceholder')}
@@ -197,7 +200,7 @@ const BlogsPage: React.FC = () => {
 
 
                     {/* Categories Filter */}
-                    <div className="bg-gray-100 p-4 rounded-lg shadow-xl mb-6 hidden lg:block">
+                    <div className="bg-gray-100 p-4 rounded-xl mb-6 hidden lg:block">
                         <h2 className="font-bold mb-3">{t('blogs.categories')}</h2>
                         <ul>
                             <li
@@ -220,7 +223,7 @@ const BlogsPage: React.FC = () => {
 
                     {/* Latest Posts */}
                     {/* Latest Posts */}
-                    <div className="bg-white p-4 rounded-lg shadow-md mb-6 hidden lg:block gap-y-4 space-y-8">
+                    <div className="bg-white rounded-lg mb-6 hidden lg:block gap-y-4 space-y-8">
                         <h2 className="font-bold mb-3">{t('blogs.latestPosts')}</h2>
                         {latestPosts.map(post => (
                             <BlogCard key={post.id} {...post} onDelete={() => handleDeleteItem(post.id)} />
@@ -230,8 +233,8 @@ const BlogsPage: React.FC = () => {
                 </aside>
 
                 {/* Blog Posts Grid */}
-                <main className="w-full lg:w-3/4 px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-1">
+                <main className="w-full lg:w-3/4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-4">
                         {currentPosts.map((post) => (
                             <BlogCard key={post.id} {...post} onDelete={() => handleDeleteItem(post.id)} />
                         ))}

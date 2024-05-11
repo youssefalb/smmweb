@@ -53,7 +53,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ id, image, title, content, publishD
 
     const dateParts = formatDate(publishDate);
     return (
-        <div className="bg-white rounded-lg overflow-hidden shadow-lg border border-gray-300 flex flex-col max-w-sm relative">
+        <div className="bg-white rounded-2xl overflow-hidden border border-gray-300 flex flex-col max-w-sm relative">
             <Link to={`/blog/${id}`} className="text-black hover:text-purple relative">
                 <div className="relative">
                     <img src={image} alt="Blog Post" className="object-cover w-full rounded-t-lg" style={{ height: '200px' }} />
@@ -69,7 +69,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ id, image, title, content, publishD
                 </div>
             </Link>
 
-            <div className="absolute top-0 right-0 m-4 bg-white p-3 shadow-lg rounded-lg">
+            <div className="absolute top-0 right-0 m-4 bg-white p-3 rounded-lg">
                 <div className="text-center">
                     <span className="block text-black text-xs font-bold">
                         {dateParts.month}
