@@ -29,6 +29,8 @@ const BlogCard: React.FC<BlogCardProps> = ({ id, image, title, content, publishD
         }
     };
 
+    console.log("publishDate: ", publishDate);
+
     const handleEdit = () => {
         navigate(`/edit-blog-post/${id}`); // Assuming you have this route set up for editing
     };
@@ -42,9 +44,9 @@ const BlogCard: React.FC<BlogCardProps> = ({ id, image, title, content, publishD
     };
     //        <div className="border border-gray-300 bg-white rounded-2xl flex flex-col items-center max-w-sm">
 
-
-    const formatDate = (dateString: string) => {
-        const date = new Date(dateString);
+    const formatDate = (timestamp: any) => {
+        // Convert seconds to milliseconds by multiplying by 1000
+        const date = new Date(timestamp.seconds * 1000);
         return {
             month: date.toLocaleDateString('en-US', { month: 'short' }).toUpperCase(),
             day: date.getDate().toString()
@@ -52,6 +54,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ id, image, title, content, publishD
     };
 
     const dateParts = formatDate(publishDate);
+    console.log("dateParts: ", dateParts);
     return (
         <div className="bg-white rounded-2xl overflow-hidden border border-gray-300 flex flex-col max-w-sm relative">
             <Link to={`/blog/${id}`} className="text-black hover:text-purple relative">

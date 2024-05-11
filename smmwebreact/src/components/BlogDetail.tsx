@@ -37,7 +37,7 @@ const BlogDetail: React.FC = () => {
                         image: data.image,
                         title: data.title,
                         content: data.content,
-                        publishDate: new Date(data.publishDate) // Converts string or number to Date object
+                        publishDate: new Date(data.publishDate.seconds * 1000) // Converts string or number to Date object
                     });
                 } else {
                     console.log("No such document!");
