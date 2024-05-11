@@ -151,7 +151,8 @@
     },
 
     "blogs": {
-        "title": "Latest Articles",
+        "title": "Blogs",
+        "subtitle": "Latest News & Articles",
         "seeAllPosts": "Read More",
         "blogSectionTitle": "Explore Our Latest Articles",
         "blogSectionDescription": "Discover the world around you with our curated content",
@@ -159,7 +160,7 @@
         "blog": "BLOG",
         "categories": "Categories",
         "allCategories": "All Categories",
-        "": "Search",
+        "search": "Search",
         "searchPlaceholder": "Enter your keywords...",
         "latestPosts": "Latest Posts"
     },

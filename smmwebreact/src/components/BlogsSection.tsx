@@ -46,8 +46,8 @@ const BlogsSection: React.FC = () => {
     return (
         <section id="news" className="p-6 bg-gray-100 pb-30 mx-auto">
             <SectionContainer
-                title={t('faq.title')}
-                subtitle={t('faq.subtitle')}
+                title={t('blogs.title')}
+                subtitle={t('blogs.subtitle')}
             >
                 <div className="max-w-6xl mx-auto"> {/* Original container padding */}
                     <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 w-full">
