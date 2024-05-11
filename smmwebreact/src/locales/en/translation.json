@@ -149,6 +149,20 @@
         "introduction": "Our team consists of professionals in the field of web development. Andrii, an SMM specialist, and Youssef, an SEO expert, together elevate the presence of every company on the internet. 🌐💪",
         "contactButton": "Contact"
     },
+
+    "blogs": {
+        "title": "Latest Articles",
+        "seeAllPosts": "Read More",
+        "blogSectionTitle": "Explore Our Latest Articles",
+        "blogSectionDescription": "Discover the world around you with our curated content",
+        "home": "HOME",
+        "blog": "BLOG",
+        "categories": "Categories",
+        "allCategories": "All Categories",
+        "": "Search",
+        "searchPlaceholder": "Enter your keywords...",
+        "latestPosts": "Latest Posts"
+    },
     "mission": {
         "subtitle": "MOTTO",
         "title": "Our Mission",

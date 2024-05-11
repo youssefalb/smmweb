@@ -5,6 +5,7 @@ import BlogCard from './components/BlogCard';
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { db } from './firebase-config';
 import backgroundImage from './assets/images/HeroBlogsBackground.svg';
+import { useTranslation } from 'react-i18next';
 
 interface BlogPost {
     id: string;
@@ -89,6 +90,7 @@ const BlogsPage: React.FC = () => {
     const [latestPosts, setLatestPosts] = useState<BlogPost[]>([]);
 
     const [searchQuery, setSearchQuery] = useState('');
+    const { t } = useTranslation();
 
 
     const fetchBlogPosts = async () => {
@@ -159,15 +161,16 @@ const BlogsPage: React.FC = () => {
                     {/* Navigation Links */}
                     <div className="space-x-4">
                         <Link to="/" className="text-white hover:text-black text-sm">
-                            HOME
+                            {t('blogs.home')}
+
                         </Link>
                         <span>|</span>
                         <Link to="/blogs" className="text-white hover:text-black text-sm">
-                            BLOG
+                            {t('blogs.blog')}
                         </Link>
                     </div>
-                    <h1 className="text-3xl font-bold mb-3">Explore Our Latest Articles</h1>
-                    <p className="font-light">Discover the world around you with our curated content</p>
+                    <h1 className="text-3xl font-bold mb-3">{t('blogs.blogSectionTitle')}</h1>
+                    <p className="font-light">{t('blogs.blogSectionDescription')}</p>
                 </div>
             </div>
 
@@ -180,7 +183,7 @@ const BlogsPage: React.FC = () => {
                     <div className="bg-green p-4 rounded-lg shadow-xl mb-6">
                         <input
                             className="w-full p-2 rounded-md border border-gray-300"
-                            placeholder="Enter your keywords..."
+                            placeholder={t('blogs.searchPlaceholder')}
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                         />
@@ -188,20 +191,20 @@ const BlogsPage: React.FC = () => {
                             className="w-full bg-purple text-white p-2 rounded-md mt-2"
                             onClick={fetchBlogPosts}
                         >
-                            Search
+                            {t('blogs.search')}
                         </button>
                     </div>
 
 
                     {/* Categories Filter */}
                     <div className="bg-gray-100 p-4 rounded-lg shadow-xl mb-6 hidden lg:block">
-                        <h2 className="font-bold mb-3">Categories</h2>
+                        <h2 className="font-bold mb-3">{t('blogs.categories')}</h2>
                         <ul>
                             <li
                                 className={`text-gray-700 py-1 px-3 rounded-md cursor-pointer ${selectedCategory === null ? 'bg-purple text-white' : 'hover:bg-gray-200'}`}
                                 onClick={() => handleCategorySelect(null)}
                             >
-                                All Categories
+                                {t('blogs.allCategories')}
                             </li>
                             {categories.map((category) => (
                                 <li
@@ -218,7 +221,7 @@ const BlogsPage: React.FC = () => {
                     {/* Latest Posts */}
                     {/* Latest Posts */}
                     <div className="bg-white p-4 rounded-lg shadow-md mb-6 hidden lg:block gap-y-4 space-y-8">
-                        <h2 className="font-bold mb-3">Latest Posts</h2>
+                        <h2 className="font-bold mb-3">{t('blogs.latestPosts')}</h2>
                         {latestPosts.map(post => (
                             <BlogCard key={post.id} {...post} onDelete={() => handleDeleteItem(post.id)} />
                         ))}

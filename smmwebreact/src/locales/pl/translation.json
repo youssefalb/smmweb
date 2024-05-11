@@ -20,6 +20,19 @@
         "codeNote": "aby szybko uzyskać konsultację",
         "helpNote": "Stworzonych stron"
     },
+    "blogs": {
+        "title": "Najnowsze Artykuły",
+        "seeAllPosts": "Czytaj Więcej",
+        "blogSectionTitle": "Odkryj Nasze Najnowsze Artykuły",
+        "blogSectionDescription": "Poznaj świat wokół siebie z naszym kuratorskim kontentem",
+        "home": "STRONA GŁÓWNA",
+        "blog": "BLOG",
+        "categories": "Kategorie",
+        "allCategories": "Wszystkie Kategorie",
+        "search": "Szukaj",
+        "searchPlaceholder": "Wpisz swoje słowa kluczowe...",
+        "latestPosts": "Najnowsze Posty"
+    },
     "services": {
         "subtitle": "NASZE USŁUGI",
         "title": "Co Oferujemy?",
