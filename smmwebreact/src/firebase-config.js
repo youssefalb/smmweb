@@ -10,7 +10,7 @@ import { getStorage } from "firebase/storage";
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCXqMTrIEY586OOCf4EVQckwfFcHZZUit4",
-    authDomain: "webokraft-a3f16.firebaseapp.com",
+    authDomain: "webokraft.com",
     projectId: "webokraft",
     storageBucket: "webokraft.appspot.com",
     messagingSenderId: "892432433201",
