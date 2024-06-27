@@ -62,7 +62,7 @@ const BlogsSection: React.FC = () => {
                     </div>
                     <div className="text-center mt-16">
                         <button
-                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                            className="bg-purple hover:bg-purple text-white font-bold py-2 px-4 rounded-lg"
                             onClick={() => navigate('/blogs')}
                         >
                             {t('blogs.seeAllPosts')}

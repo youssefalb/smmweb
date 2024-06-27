@@ -55,9 +55,9 @@ const ConsultationSection = () => {
                         className="absolute top-0 left-0 z-0 w-1/12"
                     />
                     <img
-                        src="/bench-accounting.png"
+                        src="/samsung.png"
                         alt="Person working on a laptop"
-                        className="h-full w-full object-center object-cover rounded-l-2xl"
+                        className="w-96 object-center object-cover rounded-l-2xl"
                     />
                 </div>
 

@@ -18,12 +18,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageUrl,
 
     return (
         <section id="portfolio">
-            <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg flex flex-col items-center text-left overflow-x-hidden">
+            <div className="bg-gray-100 rounded-2xl overflow-hidden flex flex-col items-center text-left overflow-x-hidden">
                 <div className="w-full bg-cover h-48" style={{ backgroundImage: `url(${imageUrl})` }}></div>
                 <div className="flex-1 p-6">
                     <h3 className="font-bold text-xl mb-2">{title}</h3>
                     <p className="text-gray-700 text-base">{description}</p>
-                    <button className="mt-5 bg-purple text-white font-bold py-2 px-6 rounded-xl" onClick={() => window.location.href = redirectUrl}>
+                    <button className="mt-5 bg-purple text-white font-bold py-2 px-6 rounded-lg" onClick={() => window.location.href = redirectUrl}>
                         {t('selectedProjects.projects.first.buttonText')}
                     </button>
                 </div>
